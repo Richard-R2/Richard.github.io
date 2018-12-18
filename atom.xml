@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://richardrenn.github.io/"/>
+  <link href="https://richardrenn.gitee.io/"/>
   <updated>2018-12-18T15:53:39.284Z</updated>
-  <id>https://richardrenn.github.io/</id>
+  <id>https://richardrenn.gitee.io/</id>
   
   <author>
     <name>任令仓</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>GitHub教程 - 分支工作流程</title>
-    <link href="https://richardrenn.github.io/2018/12/18/GitHub%E6%95%99%E7%A8%8B-%E5%88%86%E6%94%AF%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/"/>
-    <id>https://richardrenn.github.io/2018/12/18/GitHub教程-分支工作流程/</id>
+    <link href="https://richardrenn.gitee.io/2018/12/18/GitHub%E6%95%99%E7%A8%8B-%E5%88%86%E6%94%AF%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/"/>
+    <id>https://richardrenn.gitee.io/2018/12/18/GitHub教程-分支工作流程/</id>
     <published>2018-12-18T15:28:03.000Z</published>
     <updated>2018-12-18T15:53:39.284Z</updated>
     
@@ -37,19 +37,19 @@
     
     </summary>
     
-      <category term="GitHub教程" scheme="https://richardrenn.github.io/categories/GitHub%E6%95%99%E7%A8%8B/"/>
+      <category term="GitHub教程" scheme="https://richardrenn.gitee.io/categories/GitHub%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Git" scheme="https://richardrenn.github.io/tags/Git/"/>
+      <category term="Git" scheme="https://richardrenn.gitee.io/tags/Git/"/>
     
-      <category term="GitHub" scheme="https://richardrenn.github.io/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://richardrenn.gitee.io/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>GitHub教程 - Pull request 工作流程</title>
-    <link href="https://richardrenn.github.io/2018/12/18/GitHub%E6%95%99%E7%A8%8B-Pull-request-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/"/>
-    <id>https://richardrenn.github.io/2018/12/18/GitHub教程-Pull-request-工作流程/</id>
+    <link href="https://richardrenn.gitee.io/2018/12/18/GitHub%E6%95%99%E7%A8%8B-Pull-request-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/"/>
+    <id>https://richardrenn.gitee.io/2018/12/18/GitHub教程-Pull-request-工作流程/</id>
     <published>2018-12-18T12:27:28.000Z</published>
     <updated>2018-12-18T15:53:40.832Z</updated>
     
@@ -66,19 +66,19 @@
     
     </summary>
     
-      <category term="GitHub教程" scheme="https://richardrenn.github.io/categories/GitHub%E6%95%99%E7%A8%8B/"/>
+      <category term="GitHub教程" scheme="https://richardrenn.gitee.io/categories/GitHub%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Git" scheme="https://richardrenn.github.io/tags/Git/"/>
+      <category term="Git" scheme="https://richardrenn.gitee.io/tags/Git/"/>
     
-      <category term="GitHub" scheme="https://richardrenn.github.io/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://richardrenn.gitee.io/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://richardrenn.github.io/2018/12/15/hello-world/"/>
-    <id>https://richardrenn.github.io/2018/12/15/hello-world/</id>
+    <link href="https://richardrenn.gitee.io/2018/12/15/hello-world/"/>
+    <id>https://richardrenn.gitee.io/2018/12/15/hello-world/</id>
     <published>2018-12-15T06:25:47.493Z</published>
     <updated>2018-12-15T06:25:47.493Z</updated>
     
