@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://richardrenn.github.io/"/>
-  <updated>2018-12-15T06:25:47.493Z</updated>
+  <updated>2018-12-18T15:53:39.284Z</updated>
   <id>https://richardrenn.github.io/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GitHub教程 - 分支工作流程</title>
+    <link href="https://richardrenn.github.io/2018/12/18/GitHub%E6%95%99%E7%A8%8B-%E5%88%86%E6%94%AF%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/"/>
+    <id>https://richardrenn.github.io/2018/12/18/GitHub教程-分支工作流程/</id>
+    <published>2018-12-18T15:28:03.000Z</published>
+    <updated>2018-12-18T15:53:39.284Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-更新代码"><a href="#1-更新代码" class="headerlink" title="1.更新代码"></a>1.更新代码</h3><blockquote><p>进入代码目录，更新代码</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/workspace/sourcecode/richardrenn/slark</span><br><span class="line">git pull origin master</span><br><span class="line">*git pull upstream master</span><br></pre></td></tr></table></figure><blockquote><p>*查看所有远端库情况</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">origin        git@github.com:RichardRenn/slark.git (fetch)</span><br><span class="line">origin        git@github.com:RichardRenn/slark.git (push)</span><br><span class="line">upstream        git@github.com:southflower/slark.git (fetch)</span><br><span class="line">upstream        git@github.com:southflower/slark.git (push)</span><br></pre></td></tr></table></figure><blockquote><p>*查看所有分支情况，可看到当前的分支是origin/master</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* master</span><br><span class="line">  remotes/origin/HEAD -&gt; origin/master</span><br><span class="line">  remotes/origin/master</span><br><span class="line">  remotes/origin/release</span><br><span class="line">  remotes/upstream/master</span><br><span class="line">  remotes/upstream/release</span><br></pre></td></tr></table></figure><h3 id="2-新建分支"><a href="#2-新建分支" class="headerlink" title="2.新建分支"></a>2.新建分支</h3><blockquote><p>本地新建分支，并切换到新建的分支</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev</span><br></pre></td></tr></table></figure><h3 id="3-推送分支"><a href="#3-推送分支" class="headerlink" title="3.推送分支"></a>3.推送分支</h3><blockquote><p>推送新分支到远端库和上游库，冒号前的是本地分支名，冒号后的是远程分支名</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push origin dev:dev</span><br><span class="line">git push upstream dev:dev</span><br></pre></td></tr></table></figure><blockquote><p>此时再敲git branch -a 就可以看到已经在远端库和上游库都建好了分支</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* dev</span><br><span class="line">  master</span><br><span class="line">  remotes/origin/HEAD -&gt; origin/master</span><br><span class="line">  remotes/origin/dev</span><br><span class="line">  remotes/origin/master</span><br><span class="line">  remotes/origin/release</span><br><span class="line">  remotes/upstream/dev</span><br><span class="line">  remotes/upstream/master</span><br><span class="line">  remotes/upstream/release</span><br></pre></td></tr></table></figure><h3 id="4-提交修改"><a href="#4-提交修改" class="headerlink" title="4.提交修改"></a>4.提交修改</h3><blockquote><p>在本地的dev分支修改文件并提交推送到远端库</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add [file]</span><br><span class="line">git commit -m <span class="string">"something"</span></span><br><span class="line">git push origin dev</span><br><span class="line">*git push upstream dev   <span class="comment"># 这一步直接推送到上游库的dev分支，可以省一次PR</span></span><br></pre></td></tr></table></figure><h3 id="5-提交PR"><a href="#5-提交PR" class="headerlink" title="5.提交PR"></a>5.提交PR</h3><blockquote><p>在网页通过PR的方式将dev代码推送到上游库的dev分支</p></blockquote><h3 id="6-Fork仓库"><a href="#6-Fork仓库" class="headerlink" title="6.Fork仓库"></a>6.Fork仓库</h3><blockquote><p>等dev调试稳定后再通过PR的方式将上游库的dev分支merge到其master分支，即可上线</p></blockquote><hr><ul><li>PR操作可以参考<a href="/2018/12/18/GitHub教程-Pull-request-工作流程/">Pull Request 工作流程</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1-更新代码&quot;&gt;&lt;a href=&quot;#1-更新代码&quot; class=&quot;headerlink&quot; title=&quot;1.更新代码&quot;&gt;&lt;/a&gt;1.更新代码&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;进入代码目录，更新代码&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure cla
+      
+    
+    </summary>
+    
+      <category term="GitHub教程" scheme="https://richardrenn.github.io/categories/GitHub%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Git" scheme="https://richardrenn.github.io/tags/Git/"/>
+    
+      <category term="GitHub" scheme="https://richardrenn.github.io/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GitHub教程 - Pull request 工作流程</title>
+    <link href="https://richardrenn.github.io/2018/12/18/GitHub%E6%95%99%E7%A8%8B-Pull-request-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/"/>
+    <id>https://richardrenn.github.io/2018/12/18/GitHub教程-Pull-request-工作流程/</id>
+    <published>2018-12-18T12:27:28.000Z</published>
+    <updated>2018-12-18T15:53:40.832Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-Fork仓库"><a href="#1-Fork仓库" class="headerlink" title="1.Fork仓库"></a>1.Fork仓库</h3><blockquote><p>先在github上将源仓库fork到自己的仓库</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">源仓库：git@github.com:southflower/slark.git</span><br><span class="line">fork后：git@github.com:RichardRenn/slark.git</span><br></pre></td></tr></table></figure><h3 id="2-检出代码"><a href="#2-检出代码" class="headerlink" title="2.检出代码"></a>2.检出代码</h3><blockquote><p>在本地检出fork后的仓库代码</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/workspace/sourcecode/richardrenn</span><br><span class="line">git <span class="built_in">clone</span> git@github.com:RichardRenn/slark.git ./slark</span><br></pre></td></tr></table></figure><h3 id="3-关联上游源仓库"><a href="#3-关联上游源仓库" class="headerlink" title="3.关联上游源仓库"></a>3.关联上游源仓库</h3><blockquote><p>进入代码目录，加入上游源仓库关联</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./slark</span><br><span class="line">git remote add upstream git@github.com:southflower/slark.git</span><br></pre></td></tr></table></figure><h3 id="4-更新代码"><a href="#4-更新代码" class="headerlink" title="4.更新代码"></a>4.更新代码</h3><blockquote><p>更新源仓库代码到本地仓库</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch upstream</span><br><span class="line">git merge upstream/master</span><br></pre></td></tr></table></figure><h3 id="5-提交代码"><a href="#5-提交代码" class="headerlink" title="5.提交代码"></a>5.提交代码</h3><blockquote><p>在本地仓库中，修改代码后提交到自己的远端仓库</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"anything"</span></span><br><span class="line">git push origin mater</span><br></pre></td></tr></table></figure><h3 id="6-提交PR"><a href="#6-提交PR" class="headerlink" title="6.提交PR"></a>6.提交PR</h3><blockquote><p>在github网页上提交PR<br>在自己的仓库界面点击”New Pull Request”</p></blockquote><p><img src="/images/git/pull_request.png" alt="pull_request"></p><h3 id="7-PR合入"><a href="#7-PR合入" class="headerlink" title="7.PR合入"></a>7.PR合入</h3><blockquote><p>然后待源仓库的作者将你的PR合入即可</p></blockquote><hr><ul><li>带分支的工作方式可以参考<a href="/2018/12/18/GitHub教程-分支工作流程/">分支工作流程</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1-Fork仓库&quot;&gt;&lt;a href=&quot;#1-Fork仓库&quot; class=&quot;headerlink&quot; title=&quot;1.Fork仓库&quot;&gt;&lt;/a&gt;1.Fork仓库&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;先在github上将源仓库fork到自己的仓库&lt;/p&gt;
+&lt;/blo
+      
+    
+    </summary>
+    
+      <category term="GitHub教程" scheme="https://richardrenn.github.io/categories/GitHub%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Git" scheme="https://richardrenn.github.io/tags/Git/"/>
+    
+      <category term="GitHub" scheme="https://richardrenn.github.io/tags/GitHub/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

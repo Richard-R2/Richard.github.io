@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[GitHub教程 - 分支工作流程]]></title>
+    <url>%2F2018%2F12%2F18%2FGitHub%E6%95%99%E7%A8%8B-%E5%88%86%E6%94%AF%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[1.更新代码 进入代码目录，更新代码 123cd ~/workspace/sourcecode/richardrenn/slarkgit pull origin master*git pull upstream master *查看所有远端库情况 1git remote -v 1234origin git@github.com:RichardRenn/slark.git (fetch)origin git@github.com:RichardRenn/slark.git (push)upstream git@github.com:southflower/slark.git (fetch)upstream git@github.com:southflower/slark.git (push) *查看所有分支情况，可看到当前的分支是origin/master 1git branch -a 123456* master remotes/origin/HEAD -&gt; origin/master remotes/origin/master remotes/origin/release remotes/upstream/master remotes/upstream/release 2.新建分支 本地新建分支，并切换到新建的分支 1git checkout -b dev 3.推送分支 推送新分支到远端库和上游库，冒号前的是本地分支名，冒号后的是远程分支名 12git push origin dev:devgit push upstream dev:dev 此时再敲git branch -a 就可以看到已经在远端库和上游库都建好了分支 123456789* dev master remotes/origin/HEAD -&gt; origin/master remotes/origin/dev remotes/origin/master remotes/origin/release remotes/upstream/dev remotes/upstream/master remotes/upstream/release 4.提交修改 在本地的dev分支修改文件并提交推送到远端库 1234git add [file]git commit -m "something"git push origin dev*git push upstream dev # 这一步直接推送到上游库的dev分支，可以省一次PR 5.提交PR 在网页通过PR的方式将dev代码推送到上游库的dev分支 6.Fork仓库 等dev调试稳定后再通过PR的方式将上游库的dev分支merge到其master分支，即可上线 PR操作可以参考Pull Request 工作流程]]></content>
+      <categories>
+        <category>GitHub教程</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[GitHub教程 - Pull request 工作流程]]></title>
+    <url>%2F2018%2F12%2F18%2FGitHub%E6%95%99%E7%A8%8B-Pull-request-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[1.Fork仓库 先在github上将源仓库fork到自己的仓库 12源仓库：git@github.com:southflower/slark.gitfork后：git@github.com:RichardRenn/slark.git 2.检出代码 在本地检出fork后的仓库代码 12cd ~/workspace/sourcecode/richardrenngit clone git@github.com:RichardRenn/slark.git ./slark 3.关联上游源仓库 进入代码目录，加入上游源仓库关联 12cd ./slarkgit remote add upstream git@github.com:southflower/slark.git 4.更新代码 更新源仓库代码到本地仓库 12git fetch upstreamgit merge upstream/master 5.提交代码 在本地仓库中，修改代码后提交到自己的远端仓库 123git add .git commit -m "anything"git push origin mater 6.提交PR 在github网页上提交PR在自己的仓库界面点击”New Pull Request” 7.PR合入 然后待源仓库的作者将你的PR合入即可 带分支的工作方式可以参考分支工作流程]]></content>
+      <categories>
+        <category>GitHub教程</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2018%2F12%2F15%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
