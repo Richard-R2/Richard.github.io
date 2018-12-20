@@ -1,8 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[服务器配置 - Nginx安装配置]]></title>
+    <url>%2FServer-Nginx-Configuration.html</url>
+    <content type="text"><![CDATA[1.安装1apt-get install nginx 2.增加代理配置12cd /etc/nginx/sites-availablevim your_site_name 普通http配置参考： 12345678910111213# http serverserver &#123; listen 80; server_name your.site.name.cn; # ssl on; access_log /var/log/nginx/syour_site_name.access.log; error_log /var/log/nginx/your_site_name.error.log; location / &#123; proxy_pass http://127.0.0.1:8011; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forward_For $proxy_add_x_forwarded_for; &#125; 安全https配置参考： 12345678910111213141516171819# HTTPS serverserver &#123; listen 443; listen [::]:443 ipv6only=on; server_name your.site.name.cn; ssl on; access_log /var/log/nginx/your_site_name.access.log; error_log /var/log/nginx/your_site_name.error.log; ssl_certificate /path/to/your/https/cert/your_site_name.pem; ssl_certificate_key /path/to/your/https/cert/your_site_name.key; ssl_session_timeout 5m; location / &#123; proxy_pass http://127.0.0.1:8012; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forward_For $proxy_add_x_forwarded_for; &#125;&#125; 将文件链接至sites-enabled目录下。 1ln -s /etc/nginx/sites-available/your_site_name /etc/nginx/sites-enabled/your_site_name *这是因为sites-available目录下存放的只是备选配置，sites-enabled目录下才是真正有效的代理设置。 3.Nginx配置1vim /etc/nginx/nginx.conf 修改下前几行内容: 123456789user www-data;worker_processes 4; # worker数worker_rlimit_nofile 60000; pid /run/nginx.pid;events &#123; worker_connections 65535; # 最大同时连接数 multi_accept on; # 开启接受同时连接选项&#125; 4.重载配置1/usr/sbin/nginx -s reload 这一步做完Nginx已经可以正常工作了。 5.常用命令5.1.启动1/usr/sbin/nginx 5.2.停止1/usr/sbin/nginx -s stop 5.3.验证配置文件是否正确1/usr/sbin/nginx -t]]></content>
+      <categories>
+        <category>服务器搭建</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>服务器</tag>
+        <tag>Nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[服务器配置 - Redis安装配置]]></title>
+    <url>%2FServer-Redis-Configuration.html</url>
+    <content type="text"><![CDATA[1.安装1apt-get install redis-server 2.配置1vim /etc/redis/redis.conf 这里仅介绍几个基本配置 12345678# 端口port 6379# 绑定服务器IPbind 139.xxx.xxx.xxx 127.0.0.1# 登录密码requirepass 123456 3.重启1/etc/init.d/redis-server restart 这一步做完redis-server已经可以正常工作了。 4.常用命令4.1.连接1redis-cli -h 139.xxx.xxx.xxx -p 6379 -a 123456 如果是本地连接的话-h参数可以省略 使用默认端口6379的话-p参数可以省略 没有设置密码的话-a参数可以省略 4.2.关闭1redis-cli shutdown 4.2.启动服务器1redis-server]]></content>
+      <categories>
+        <category>服务器搭建</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>服务器</tag>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[GitHub教程 - Git安装配置]]></title>
+    <url>%2FGit-Configuration.html</url>
+    <content type="text"><![CDATA[*1.环境变量1vim ~/.bashrc 在后面添加以下内容,以解决某些包(如perl、git)安装时的warning 12export LC_ALL="C"export LANGUAGE="zh_CN:zh" 当然也可以直接在命令终端中export临时设置环境变量 2.安装123apt-get install git # 这是Ubuntu下的命令yum install git # 这是CentOS下的命令brew install git # 这是MAC下的命令 3.生成ssh密钥对1ssh-keygen -t rsa -b 4096 -C "your_email@example.com" 如果不想设置密码的话直接三次回车即可，和git生成密钥的命令相同。 生成的密钥对位置在 ~/.ssh，查看下公钥，后面要用到。 1cat ~/.ssh/id_rsa.pub 内容类似下面这样 1ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+am2s/r1n+xsipi/4H2ll8p3McdhQCLBwJGNbkaxpeWKtdbiUbqAWjHS436eNt/OF13VsyWLs5lb6J2I3J6GlCcEGMGOFc4gzLTP9e/TmXeyFlBMZkuSJTbsXvL9Q/tff/8Tgt4aVwR3OWlwfvPdtoyR0tGhDDQn8a0gzs04mPyMWjK6akt/zGCQ70Eo6stVMGCyMAL/PrHwdZ/puXjtw0T9HSs/ON/Jub+h3oKfgJVhpJNbIDR2r08LoEA0roTplI4aSR+JgnSKsXhIvTAUm+VRmWgz3oPYcNkaGkvBvA1gfk/baB6qxv0hkjPwtY5GIRkCU6cIcjG3U1LR6pnH+8Z0RbN9YaFFNRRf4rMnZ3n0jhYXCq7dzBoofLWRVlAqTlybF7xz9JNVQxiC+o5skBHJ/Eb7Ggtejc6TVW+FJaNUy5+yWqfhq57kC4zq+5HhAY9ToKZpYLKjJa7oG0eHAeOAgSd2jdDEvALegap4nrMHVLP8sOQlNFBMPjy1r0cW/Afp32gCtPOpQRuIkQdOnWUkzjObGTLaVffanhYnX470UNsvgQ+IyikhS5tiKPqkT317v6yFV4doeZgfNYtcgpLVZcVxkItTLS1h75d4h4MD2JVRk2nBGSLp5j2WIji4Tiy++LblV1Y5Y2wRcfefdXCIMT3jMNAcyhuCaNfaD/Q== your_email@example.com 4.公钥添加到GitHub传送门：点击这里添加你自己的公钥 将上一步的公钥拷贝下来，粘贴至GitHub网页以下位置 5.配置用户名和邮箱12git config --global user.name "your_name"git config --global user.email "your_email@example.com" 6.克隆代码1git clone git@github.com:user_name/project_name.git /path/to/your/sourcecode]]></content>
+      <categories>
+        <category>GitHub教程</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[服务器搭建 - 为服务器添加ssh公钥验证]]></title>
+    <url>%2FServer-SSH-Key.html</url>
+    <content type="text"><![CDATA[使用ssh密钥对登陆，可以避免每次登陆都要输入密码，便捷的同时也提高了安全性。 1.生成密钥对 在本地运行如下命令： 1ssh-keygen -t rsa -b 4096 -C "your_email@example.com" 如果不想设置密码的话直接三次回车即可，和git生成密钥的命令相同。 生成的密钥对位置在 ~/.ssh，查看下公钥，下一步要用到。 1cat ~/.ssh/id_rsa.pub 内容类似下面这样 1ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+am2s/r1n+xsipi/4H2ll8p3McdhQCLBwJGNbkaxpeWKtdbiUbqAWjHS436eNt/OF13VsyWLs5lb6J2I3J6GlCcEGMGOFc4gzLTP9e/TmXeyFlBMZkuSJTbsXvL9Q/tff/8Tgt4aVwR3OWlwfvPdtoyR0tGhDDQn8a0gzs04mPyMWjK6akt/zGCQ70Eo6stVMGCyMAL/PrHwdZ/puXjtw0T9HSs/ON/Jub+h3oKfgJVhpJNbIDR2r08LoEA0roTplI4aSR+JgnSKsXhIvTAUm+VRmWgz3oPYcNkaGkvBvA1gfk/baB6qxv0hkjPwtY5GIRkCU6cIcjG3U1LR6pnH+8Z0RbN9YaFFNRRf4rMnZ3n0jhYXCq7dzBoofLWRVlAqTlybF7xz9JNVQxiC+o5skBHJ/Eb7Ggtejc6TVW+FJaNUy5+yWqfhq57kC4zq+5HhAY9ToKZpYLKjJa7oG0eHAeOAgSd2jdDEvALegap4nrMHVLP8sOQlNFBMPjy1r0cW/Afp32gCtPOpQRuIkQdOnWUkzjObGTLaVffanhYnX470UNsvgQ+IyikhS5tiKPqkT317v6yFV4doeZgfNYtcgpLVZcVxkItTLS1h75d4h4MD2JVRk2nBGSLp5j2WIji4Tiy++LblV1Y5Y2wRcfefdXCIMT3jMNAcyhuCaNfaD/Q== your_email@example.com 2.添加到服务器123ssh root@server_ip # 登陆服务器mkdir .ssh # 创建.ssh目录vim .ssh/authorized_keys # 创建已验证的密钥记录文件 在vim编辑器中按i键，把上一步的公钥拷贝进来，多个公钥的话换行隔开即可。然后按ESC键退出编辑模式，输入:wq回车即可保存文件。 这样以后输入ssh root@ip命令就可以不用输入密码直接进去了。 3.更快捷地登陆完成上面的配置后，还可以通过对本地ssh进行配置以进一步简化登陆操作。 在本地打开~/.ssh/config 文件 1vim ~/.ssh/config 添加如下配置内容: 1234Host happyHostname 139.xxx.xxx.xxxUser rootIdentityFile ~/.ssh/id_rsa 以后在本地直接输入以下命令就可登陆远程服务器 1ssh happy 多个服务器配置只需换行隔开即可。]]></content>
+      <categories>
+        <category>服务器搭建</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>ssh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[服务器配置 - Nginx+Gunicorn+Supervisor+Flask]]></title>
+    <url>%2FServer-Configuration.html</url>
+    <content type="text"><![CDATA[1.为服务器添加ssh公钥验证2.Git安装配置3.Redis安装配置4.Nginx安装配置5.下载代码,配置Python虚拟环境6.Gunicorn安装配置7.Supervisor安装配置]]></content>
+      <categories>
+        <category>服务器搭建</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[GitHub教程 - 分支工作流程]]></title>
-    <url>%2F2018%2F12%2F18%2FGitHub%E6%95%99%E7%A8%8B-%E5%88%86%E6%94%AF%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%2F</url>
+    <url>%2FGitHub-Branch-Workflow.html</url>
     <content type="text"><![CDATA[1.更新代码 进入代码目录，更新代码 123cd ~/workspace/sourcecode/richardrenn/slarkgit pull origin master*git pull upstream master *查看所有远端库情况 1git remote -v 1234origin git@github.com:RichardRenn/slark.git (fetch)origin git@github.com:RichardRenn/slark.git (push)upstream git@github.com:southflower/slark.git (fetch)upstream git@github.com:southflower/slark.git (push) *查看所有分支情况，可看到当前的分支是origin/master 1git branch -a 123456* master remotes/origin/HEAD -&gt; origin/master remotes/origin/master remotes/origin/release remotes/upstream/master remotes/upstream/release 2.新建分支 本地新建分支，并切换到新建的分支 1git checkout -b dev 3.推送分支 推送新分支到远端库和上游库，冒号前的是本地分支名，冒号后的是远程分支名 12git push origin dev:devgit push upstream dev:dev 此时再敲git branch -a 就可以看到已经在远端库和上游库都建好了分支 123456789* dev master remotes/origin/HEAD -&gt; origin/master remotes/origin/dev remotes/origin/master remotes/origin/release remotes/upstream/dev remotes/upstream/master remotes/upstream/release 4.提交修改 在本地的dev分支修改文件并提交推送到远端库 1234git add [file]git commit -m "something"git push origin dev*git push upstream dev # 这一步直接推送到上游库的dev分支，可以省一次PR 5.提交PR 在网页通过PR的方式将dev代码推送到上游库的dev分支 6.Fork仓库 等dev调试稳定后再通过PR的方式将上游库的dev分支merge到其master分支，即可上线 PR操作可以参考Pull Request 工作流程]]></content>
       <categories>
         <category>GitHub教程</category>
@@ -14,7 +76,7 @@
   </entry>
   <entry>
     <title><![CDATA[GitHub教程 - Pull request 工作流程]]></title>
-    <url>%2F2018%2F12%2F18%2FGitHub%E6%95%99%E7%A8%8B-Pull-request-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%2F</url>
+    <url>%2FGitHub-Pull-Request-Workflow.html</url>
     <content type="text"><![CDATA[1.Fork仓库 先在github上将源仓库fork到自己的仓库 12源仓库：git@github.com:southflower/slark.gitfork后：git@github.com:RichardRenn/slark.git 2.检出代码 在本地检出fork后的仓库代码 12cd ~/workspace/sourcecode/richardrenngit clone git@github.com:RichardRenn/slark.git ./slark 3.关联上游源仓库 进入代码目录，加入上游源仓库关联 12cd ./slarkgit remote add upstream git@github.com:southflower/slark.git 4.更新代码 更新源仓库代码到本地仓库 12git fetch upstreamgit merge upstream/master 5.提交代码 在本地仓库中，修改代码后提交到自己的远端仓库 123git add .git commit -m "anything"git push origin mater 6.提交PR 在github网页上提交PR在自己的仓库界面点击”New Pull Request” 7.PR合入 然后待源仓库的作者将你的PR合入即可 带分支的工作方式可以参考分支工作流程]]></content>
       <categories>
         <category>GitHub教程</category>
@@ -26,7 +88,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F12%2F15%2Fhello-world%2F</url>
+    <url>%2Fhello-world.html</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>

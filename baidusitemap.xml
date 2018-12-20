@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://richardrenn.gitee.io/2018/12/18/GitHub%E6%95%99%E7%A8%8B-Pull-request-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
-    <lastmod>2018-12-18T15:53:40.832Z</lastmod>
+    <loc>https://richardrenn.coding.me/Server-SSH-Key.html</loc>
+    <lastmod>2018-12-20T16:20:16.745Z</lastmod>
   </url>  <url>
-    <loc>https://richardrenn.gitee.io/2018/12/18/GitHub%E6%95%99%E7%A8%8B-%E5%88%86%E6%94%AF%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
-    <lastmod>2018-12-18T15:53:39.284Z</lastmod>
+    <loc>https://richardrenn.coding.me/Server-Redis-Configuration.html</loc>
+    <lastmod>2018-12-20T16:19:51.346Z</lastmod>
   </url>  <url>
-    <loc>https://richardrenn.gitee.io/2018/12/15/hello-world/</loc>
-    <lastmod>2018-12-15T06:25:47.493Z</lastmod>
+    <loc>https://richardrenn.coding.me/Server-Nginx-Configuration.html</loc>
+    <lastmod>2018-12-20T16:19:28.560Z</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/Server-Configuration.html</loc>
+    <lastmod>2018-12-20T16:19:03.516Z</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html</loc>
+    <lastmod>2018-12-20T16:18:40.134Z</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/GitHub-Branch-Workflow.html</loc>
+    <lastmod>2018-12-20T16:18:17.254Z</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/Git-Configuration.html</loc>
+    <lastmod>2018-12-20T16:17:39.187Z</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/hello-world.html</loc>
+    <lastmod>2018-12-20T14:37:50.018Z</lastmod>
   </url>
 </urlset>

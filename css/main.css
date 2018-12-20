@@ -603,7 +603,7 @@ pre code {
   text-shadow: none;
 }
 .highlight {
-  border-radius: 5px;
+  border-radius: 2px;
 }
 .highlight pre {
   border: none;
@@ -2150,7 +2150,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c216ff;
+  background: #f70f45;
 }
 .links-of-blogroll {
   font-size: 13px;
