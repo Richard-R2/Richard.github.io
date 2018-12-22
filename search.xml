@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[服务器配置 - 配置Python虚拟环境]]></title>
+    <url>%2FPython-Virtualenv.html</url>
+    <content type="text"><![CDATA[1.安装1pip install virtualenv 2.创建虚拟环境123git clone git@github.com:RichardRenn/happy.git /var/www/happy # 克隆项目代码cd /var/www/happy # 进入项目目录virtualenv venv # 创建虚拟环境目录./venv 3.激活并进入虚拟环境1source ./venv/bin/activate 当看到命令行前面显示(venv)标志时即表示已进入虚拟环境 4.安装需求库 同在普通环境下的安装命令是相同的，只不过所有的库都会被安装到虚拟环境目录下1pip install [module-name] *也可以从需求库依赖文件安装所需库1pip install -r requirements.txt 需求库依赖文件可以从任何一个虚拟环境中导出，导出命令如下：1pip freeze &gt; requirements.txt 推荐保持依赖文件为最新状态，并存放在项目代码目录下，可以很方便地在新机器上安装部署项目虚拟环境。 5.退出虚拟环境1deactivate]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>服务器</tag>
+        <tag>virtualenv</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[服务器配置 - Nginx安装配置]]></title>
     <url>%2FServer-Nginx-Configuration.html</url>
     <content type="text"><![CDATA[1.安装1apt-get install nginx 2.增加代理配置12cd /etc/nginx/sites-availablevim your_site_name 普通http配置参考： 12345678910111213# http serverserver &#123; listen 80; server_name your.site.name.cn; # ssl on; access_log /var/log/nginx/syour_site_name.access.log; error_log /var/log/nginx/your_site_name.error.log; location / &#123; proxy_pass http://127.0.0.1:8011; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forward_For $proxy_add_x_forwarded_for; &#125; 安全https配置参考： 12345678910111213141516171819# HTTPS serverserver &#123; listen 443; listen [::]:443 ipv6only=on; server_name your.site.name.cn; ssl on; access_log /var/log/nginx/your_site_name.access.log; error_log /var/log/nginx/your_site_name.error.log; ssl_certificate /path/to/your/https/cert/your_site_name.pem; ssl_certificate_key /path/to/your/https/cert/your_site_name.key; ssl_session_timeout 5m; location / &#123; proxy_pass http://127.0.0.1:8012; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forward_For $proxy_add_x_forwarded_for; &#125;&#125; 将文件链接至sites-enabled目录下。 1ln -s /etc/nginx/sites-available/your_site_name /etc/nginx/sites-enabled/your_site_name *这是因为sites-available目录下存放的只是备选配置，sites-enabled目录下才是真正有效的代理设置。 3.Nginx配置1vim /etc/nginx/nginx.conf 修改下前几行内容: 123456789user www-data;worker_processes 4; # worker数worker_rlimit_nofile 60000; pid /run/nginx.pid;events &#123; worker_connections 65535; # 最大同时连接数 multi_accept on; # 开启接受同时连接选项&#125; 4.重载配置1/usr/sbin/nginx -s reload 这一步做完Nginx已经可以正常工作了。 5.常用命令5.1.启动1/usr/sbin/nginx 5.2.停止1/usr/sbin/nginx -s stop 5.3.验证配置文件是否正确1/usr/sbin/nginx -t]]></content>
@@ -8,8 +21,8 @@
         <category>服务器搭建</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>服务器</tag>
+        <tag>Linux</tag>
         <tag>Nginx</tag>
       </tags>
   </entry>
@@ -21,8 +34,8 @@
         <category>服务器搭建</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>服务器</tag>
+        <tag>Linux</tag>
         <tag>Redis</tag>
       </tags>
   </entry>
@@ -58,8 +71,8 @@
         <category>服务器搭建</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>服务器</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
