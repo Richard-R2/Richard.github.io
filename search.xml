@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[服务器配置 - 配置Python虚拟环境]]></title>
+    <title><![CDATA[Python - Supervisor安装配置]]></title>
+    <url>%2FServer-Supervisor-Configuration.html</url>
+    <content type="text"><![CDATA[1.安装1pip install supervisor 2.初始化启动配置文件12echo_supervisord_conf &gt; /etc/supervisord.confvim /etc/supervisord.conf 最后面加上下面这两行内容，这样就可以从/etc/supervisor目录下自动加载所有的conf文件了。 12[include]files = /etc/supervisor/*.conf 3.新建项目配置文件123mkdir /var/log/supervisormkdir /etc/supervisorvim /etc/supervisor/happydev.conf 内容如下： 12345678910111213[program:happydev]directory = /var/www/happydev ;command = /var/www/happydev/venv/bin/gunicorn -w4 -b127.0.0.1:8003 --timeout 120 happy:app ;autostart = true ;startsecs = 5 ;autorestart = true ;startretries = 3 ;user = root ;redirect_stderr = true ;stdout_logfile_maxbytes = 100MB ;stdout_logfile_backups = 10 ;stdout_logfile = /var/log/supervisor/happydev.log ;environment = HAPPY_CONFIG_FILE=&quot;/var/www/happydev/happy/config/staging.py&quot;,HAPPY_PATH=&quot;/var/www/happydev&quot; ; 这里管理的进程是使用gunicorn启动的Flask项目，关于gunicorn的使用可以参考Gunicorn安装配置。 4.启动suprervisord1supervisord -c /etc/supervisord.conf 到这一步supervisor已经正常工作了。 5.常用命令5.1.停止supervisor主进程 查看supervisord进程号(pid)： 1ps aux | grep supervisord 关闭进程： 1kill [pid] 5.2.启动单个项目进程1supervisorctl start happydev 5.3.停止单个项目进程1supervisorctl stop happydev 注意：使用此命令停止的进程不会被自动重启机制重新启动 5.4.重启单个项目进程1supervisorctl restart happydev 5.5.重新加载单个项目123supervisorctl remove happydev # 移除happydev项目supervisorctl reread # 重新读取所有配置文件supervisorctl add happydev # 添加happydev项目 5.6.查看所有项目进程的运行状态1supervisorctl status]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Linux</tag>
+        <tag>服务器</tag>
+        <tag>Supervisor</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python - Gunicorn安装配置]]></title>
+    <url>%2FServer-Gunicorn-Configuration.html</url>
+    <content type="text"><![CDATA[1.安装123cd /var/www/happy # 进入项目代码目录source venv/bin/activate # 激活并进入虚拟环境pip install gunicorn # 在虚拟环境中安装gunicorn 2.使用gunicorn启动Flask项目1gunicorn -w4 -b127.0.0.1:8003 happy:app 这里的happy是Flask项目的app名-w4 等同于 –workers=4，意为同时启动四个worker-b127.0.0.1:8003 等同于 –bind=127.0.0.1:8003，用于指定绑定的服务器ip和端口 3.关闭进程 Ctrl+C即可。 后台进程可以使用以下命令查看进程号(pid): 1ps -ef | grep gunicorn 关闭进程命令： 1kill [pid] 推荐使用supervisor来管理gunicorn进程，优点是启动、停止、重启都很方便，并且支持自动重启被意外停止的进程，可以参考Supervisor安装配置。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Linux</tag>
+        <tag>服务器</tag>
+        <tag>Gunicorn</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python - virtualenv虚拟环境配置]]></title>
     <url>%2FPython-Virtualenv.html</url>
     <content type="text"><![CDATA[1.安装1pip install virtualenv 2.创建虚拟环境123git clone git@github.com:RichardRenn/happy.git /var/www/happy # 克隆项目代码cd /var/www/happy # 进入项目目录virtualenv venv # 创建虚拟环境目录./venv 3.激活并进入虚拟环境1source ./venv/bin/activate 当看到命令行前面显示(venv)标志时即表示已进入虚拟环境 4.安装需求库 同在普通环境下的安装命令是相同的，只不过所有的库都会被安装到虚拟环境目录下1pip install [module-name] *也可以从需求库依赖文件安装所需库1pip install -r requirements.txt 需求库依赖文件可以从任何一个虚拟环境中导出，导出命令如下：1pip freeze &gt; requirements.txt 推荐保持依赖文件为最新状态，并存放在项目代码目录下，可以很方便地在新机器上安装部署项目虚拟环境。 5.退出虚拟环境1deactivate]]></content>
       <categories>
@@ -9,7 +37,6 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>服务器</tag>
         <tag>virtualenv</tag>
       </tags>
   </entry>
@@ -21,8 +48,8 @@
         <category>服务器搭建</category>
       </categories>
       <tags>
-        <tag>服务器</tag>
         <tag>Linux</tag>
+        <tag>服务器</tag>
         <tag>Nginx</tag>
       </tags>
   </entry>
@@ -34,8 +61,8 @@
         <category>服务器搭建</category>
       </categories>
       <tags>
-        <tag>服务器</tag>
         <tag>Linux</tag>
+        <tag>服务器</tag>
         <tag>Redis</tag>
       </tags>
   </entry>
@@ -66,13 +93,13 @@
   <entry>
     <title><![CDATA[服务器配置 - Nginx+Gunicorn+Supervisor+Flask]]></title>
     <url>%2FServer-Configuration.html</url>
-    <content type="text"><![CDATA[1.为服务器添加ssh公钥验证2.Git安装配置3.Redis安装配置4.Nginx安装配置5.下载代码,配置Python虚拟环境6.Gunicorn安装配置7.Supervisor安装配置]]></content>
+    <content type="text"><![CDATA[1.为服务器添加ssh公钥验证2.Git安装配置3.Redis安装配置4.Nginx安装配置5.配置Python虚拟环境6.Gunicorn安装配置7.Supervisor安装配置]]></content>
       <categories>
         <category>服务器搭建</category>
       </categories>
       <tags>
-        <tag>服务器</tag>
         <tag>Linux</tag>
+        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>

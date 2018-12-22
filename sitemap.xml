@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://richardrenn.coding.me/Server-Gunicorn-Configuration.html</loc>
+    
+    <lastmod>2018-12-22T16:56:53.768Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://richardrenn.coding.me/Server-Supervisor-Configuration.html</loc>
+    
+    <lastmod>2018-12-22T16:56:19.939Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://richardrenn.coding.me/Server-Nginx-Configuration.html</loc>
+    
+    <lastmod>2018-12-22T16:51:32.852Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://richardrenn.coding.me/Python-Virtualenv.html</loc>
+    
+    <lastmod>2018-12-22T15:51:46.859Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://richardrenn.coding.me/Server-Configuration.html</loc>
+    
+    <lastmod>2018-12-22T15:47:52.689Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://richardrenn.coding.me/Server-SSH-Key.html</loc>
     
     <lastmod>2018-12-22T15:43:39.930Z</lastmod>
@@ -12,20 +47,6 @@
     <loc>https://richardrenn.coding.me/Server-Redis-Configuration.html</loc>
     
     <lastmod>2018-12-22T15:43:29.039Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://richardrenn.coding.me/Server-Nginx-Configuration.html</loc>
-    
-    <lastmod>2018-12-22T15:43:12.325Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://richardrenn.coding.me/Server-Configuration.html</loc>
-    
-    <lastmod>2018-12-22T15:42:23.515Z</lastmod>
     
   </url>
   
@@ -47,13 +68,6 @@
     <loc>https://richardrenn.coding.me/Git-Configuration.html</loc>
     
     <lastmod>2018-12-22T15:41:36.755Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://richardrenn.coding.me/Python-Virtualenv.html</loc>
-    
-    <lastmod>2018-12-22T15:39:45.614Z</lastmod>
     
   </url>
   

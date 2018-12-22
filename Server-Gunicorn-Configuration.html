@@ -112,17 +112,18 @@
 
 
 
-  <meta name="description" content="任令仓技术博客">
-<meta name="keywords" content="灰帽子,任令仓,个人博客,技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="灰帽子">
-<meta property="og:url" content="https://richardrenn.coding.me/tags/virtualenv/index.html">
+  <meta name="description" content="Gunicorn是一个高性能的Python WSGI UNIX HTTP服务器，使用简单，资源消耗低，兼容flask、django等Web框架。本文将介绍Gunicorn的安装、配置及使用。">
+<meta name="keywords" content="Gunicorn安装配置,Linux,服务器,Gunicorn,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python - Gunicorn安装配置">
+<meta property="og:url" content="https://richardrenn.coding.me/Server-Gunicorn-Configuration.html">
 <meta property="og:site_name" content="灰帽子">
-<meta property="og:description" content="任令仓技术博客">
+<meta property="og:description" content="Gunicorn是一个高性能的Python WSGI UNIX HTTP服务器，使用简单，资源消耗低，兼容flask、django等Web框架。本文将介绍Gunicorn的安装、配置及使用。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-22T16:56:53.768Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="灰帽子">
-<meta name="twitter:description" content="任令仓技术博客">
+<meta name="twitter:title" content="Python - Gunicorn安装配置">
+<meta name="twitter:description" content="Gunicorn是一个高性能的Python WSGI UNIX HTTP服务器，使用简单，资源消耗低，兼容flask、django等Web框架。本文将介绍Gunicorn的安装、配置及使用。">
 
 
 
@@ -131,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="https://richardrenn.coding.me/tags/virtualenv/">
+  <link rel="canonical" href="https://richardrenn.coding.me/Server-Gunicorn-Configuration.html">
 
 
 
@@ -141,7 +142,7 @@
   };
 </script>
 
-  <title>标签: virtualenv | 灰帽子</title>
+  <title>Python - Gunicorn安装配置 | 灰帽子 - 任令仓技术博客</title>
   
 
 
@@ -198,7 +199,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -251,7 +252,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">11</span></a>
   </li>
@@ -340,82 +341,329 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>virtualenv<small>标签</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://richardrenn.coding.me/Server-Gunicorn-Configuration.html">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="任令仓">
+      <meta itemprop="description" content="任令仓技术博客">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灰帽子">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/Python-Virtualenv.html" itemprop="url">
-              
-                <span itemprop="name">Python - virtualenv虚拟环境配置</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">Python - Gunicorn安装配置
+              
+            
+          </h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-22T23:00:54+08:00" content="2018-12-22">
-          12-22
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-22 23:52:38" itemprop="dateCreated datePublished" datetime="2018-12-22T23:52:38+08:00">2018-12-22</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-23 00:56:53" itemprop="dateModified" datetime="2018-12-23T00:56:53+08:00">2018-12-23</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Server-Gunicorn-Configuration.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/Server-Gunicorn-Configuration.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/Server-Gunicorn-Configuration.html" class="leancloud_visitors" data-flag-title="Python - Gunicorn安装配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">461</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">Gunicorn是一个高性能的Python WSGI UNIX HTTP服务器，使用简单，资源消耗低，兼容flask、django等Web框架。本文将介绍Gunicorn的安装、配置及使用。</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/www/happy <span class="comment"># 进入项目代码目录</span></span><br><span class="line"><span class="built_in">source</span> venv/bin/activate <span class="comment"># 激活并进入虚拟环境</span></span><br><span class="line">pip install gunicorn <span class="comment"># 在虚拟环境中安装gunicorn</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-使用gunicorn启动Flask项目"><a href="#2-使用gunicorn启动Flask项目" class="headerlink" title="2.使用gunicorn启动Flask项目"></a>2.使用gunicorn启动Flask项目</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gunicorn -w4 -b127.0.0.1:8003 happy:app</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里的happy是Flask项目的app名<br>-w4 等同于 –workers=4，意为同时启动四个worker<br>-b127.0.0.1:8003 等同于 –bind=127.0.0.1:8003，用于指定绑定的服务器ip和端口</p>
+</blockquote>
+<h2 id="3-关闭进程"><a href="#3-关闭进程" class="headerlink" title="3.关闭进程"></a>3.关闭进程</h2><blockquote>
+<p>Ctrl+C即可。</p>
+</blockquote>
+<blockquote>
+<p>后台进程可以使用以下命令查看进程号(pid):</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep gunicorn</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>关闭进程命令：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> [pid]</span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li>推荐使用supervisor来管理gunicorn进程，优点是启动、停止、重启都很方便，并且支持自动重启被意外停止的进程，可以参考<a href="/Server-Supervisor-Configuration.html">Supervisor安装配置</a>。</li>
+</ul>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="任令仓 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpeg" alt="任令仓 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>任令仓</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://richardrenn.coding.me/Server-Gunicorn-Configuration.html" title="Python - Gunicorn安装配置">https://richardrenn.coding.me/Server-Gunicorn-Configuration.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/服务器/" rel="tag"># 服务器</a>
+          
+            <a href="/tags/Gunicorn/" rel="tag"># Gunicorn</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Python-Virtualenv.html" rel="next" title="Python - virtualenv虚拟环境配置">
+                <i class="fa fa-chevron-left"></i> Python - virtualenv虚拟环境配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Server-Supervisor-Configuration.html" rel="prev" title="Python - Supervisor安装配置">
+                Python - Supervisor安装配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -438,8 +686,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -512,6 +769,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装"><span class="nav-text">1.安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-使用gunicorn启动Flask项目"><span class="nav-text">2.使用gunicorn启动Flask项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-关闭进程"><span class="nav-text">3.关闭进程</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -669,6 +942,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
 
   
 
