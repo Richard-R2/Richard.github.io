@@ -1,6 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python - 装饰器]]></title>
+    <url>%2FPython-Decorator.html</url>
+    <content type="text"><![CDATA[1.装饰器的概念 装饰器(decorator):装饰器是一种闭包的使用，要理解装饰器的原理必须先理解python闭包的概念。 关于闭包的知识可以参考Python闭包。 2.举例理解1234567891011121314151617181920212223242526# -*- coding: utf-8 -*-def deco(func): print("deco") def inner_deco(*args): # 调用的enclosing作用域中的对象，inner_deco函数就是个闭包 print("inner_deco") for a in args: if not isinstance(a, int): # 参数检查语句 return 0 return func(*args) # 调用了enclosing作用域的func，所以func会被加入到inner_deco的__closure__属性中 return inner_deco@deco # 语法糖，就相当于func_sum = deco(func_sum)，此时func_sum就指向了inner_deco。可以理解为func_sum被deco装饰后变成了inner_decodef func_sum(*args): print("func_sum") return sum(args)@decodef func_min(*args): print("func_min") return min(args)# func_sum = deco(func_sum)print(func_sum(1,2,'3'))print(func_min(4,5,6)) 12345678运行结果：decodecoinner_deco0inner_decofunc_min4 @deco只是一种语法糖写法之所以打印结果中没有输出：”func_sum”，是因为在执行参数检查语句时return 0了。 3.知识点3.1 装饰器在何时生效？ 在import时就生效了，因为@deco就相当于func_sum = deco(func_sum)，是写在最外面的。如果把上述例子中最后的两个print语句注释掉的话，执行结果将会是： 12decodeco 3.2 装饰器能不能返回别的函数？ 当然可以，这样就可以修改函数的功能了。即被装饰的函数的功能取决于inner_deco返回的是哪个函数。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>装饰器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python - 闭包]]></title>
+    <url>%2FPython-Closure.html</url>
+    <content type="text"><![CDATA[1.闭包的概念 闭包(closure):内部函数中对enclosing作用域中的变量进行引用，这个内部函数就称为闭包。 关于enclosing作用域相关的知识可以参考Python函数作用域。 2.举例解释 首先要理解pytohn中的函数也是一个对象，它是有属性和返回值的，而在函数执行完后其内部变量会被解释器回收。 12345678910111213141516171819# Gpass_line = 60def func(score): # E print("%x" % id(score)) # 以16进制打印score的id值 pass_line = 90 result = "yes" if score &gt;= pass_line else "no" print(result) def inner_func(): # score在E作用域中，inner_func就是个闭包, 有__closure__属性 # L print(score) print(inner_func.__closure__) return inner_funcf = func(80) # 语句1 func()返回了一个函数对象inner_funcf() # 语句2 此时f即inner_funcprint(f.__closure__) 123456运行结果：6e7e6ac0no(&lt;cell at 0x000001FC0B9AB6A8: int object at 0x000000006E7E6AC0&gt;,)80(&lt;cell at 0x0000019CDFBDB6A8: int object at 0x000000006E7E6AC0&gt;,) 两个本来语句1运行完之后，func内部的变量都已经被回收了，那么这个 80为什么还可以被语句2打印出来呢？注意下这个现象f.closure这个元组的第一个元素的id和score变量的id值相同。说明如果内部函数中对enclosing作用域中的变量进行引用之后，这个变量就会被添加到inner_func的closure属性这个元组中，这样因为有了这个添加到元组的引用，score变量就不会被回收了，再调用f函数时，就会在它的closure属性中查找score变量，这样就自然而然的可以引用了。 理解了这个例子就可以搞懂Python的闭包了。 3.一个简单的应用 下面的代码就是应用闭包达到了自定pass_line的目的 1234567891011def func(pass_line): def inner_func(score): # score在E作用域中，inner_func就是个闭包, 有__closure__属性 result = "yes" if score &gt;= pass_line else "no" # 此时引用了enclosing作用域中的pass_line，那么pass_line变量就被添加到了__closure__属性中 print(result) return inner_funcf = func(90) # 语句1 func()返回了一个函数对象inner_funcf(80) # 语句2 此时f即inner_funcf2 = func(60)f2(80) 123运行结果：noyes 4.经典错误代码 参考闭包经典错误代码 123456789def foo(): a = 1 def bar(): a = a + 1 return a return barc = foo()c() 12会报错如下：local variable &apos;a&apos; referenced before assignment 这是因为在执行代码 c = foo()时，python会导入全部的闭包函数体bar()来分析其的局部变量，python规则指定所有在赋值语句左面的变量都是局部变量，则在闭包bar()中，变量a在赋值符号”=”的左面，被python认为是bar()中的局部变量。再接下来执行print c()时，程序运行至a = a + 1时，因为先前已经把a归为bar()中的局部变量，所以python会在bar()中去找在赋值语句右面的a的值，结果找不到，就会报错。解决的方法很简单: 123456def foo(): a = [1] def bar(): a[0] = a[0] + 1 return a[0] return bar 只要将a设定为一个容器就可以了。这样使用起来多少有点不爽，所以在python3以后，在a = a + 1 之前，使用语句nonloacal a就可以了，该语句显式的指定a不是闭包的局部变量。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>闭包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python - 函数作用域]]></title>
+    <url>%2FPython-Function-Scope.html</url>
+    <content type="text"><![CDATA[1.函数作用域 L：local 函数内部作用域； E：enclosing 函数内部与它的内嵌函数之间； G：global 全局作用域，在同一个.py文件最外层； B：build-in 解释器内置作用域。 2.对象查找顺序 L &gt; E &gt; G &gt; B 3.举例解释12345678910111213141516171819202122# -*- conding: utf-8 -*-# Gpass_line = 60 def func(score): # E pass_line = 90 result = "yes" if score &gt;= pass_line else "no" print(result) def inner_func(): # L # score = 81 print(score) inner_func() print(max(1,2)) # Bfunc(80)]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>函数作用域</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux开机启动项目录rc.d]]></title>
+    <url>%2FLinux-Msconfig.html</url>
+    <content type="text"><![CDATA[本文以/init.d/redis-server-2脚本为例，介绍如何自定义开机启动项。 /etc/init.d目录下是所有的启动脚本，我们可以通过以下命令来运行。 1/etc/init.d/脚本名 参数 1.先查看下自己的开机启动级别1Runlevel 显示 N 2则当前的级别是2级,那么所有开机启动项就是在/etc/rc2.d目录下。 2.查看下原来的redis启动序号1ls -l /etc/rc2.d 这个目录下都是软链接（符号链接），链接到/etc/init.d目录。显示格式如下：S/K + 序号 + 脚本名 12lrwxrwxrwx 1 root root 22 Dec 2 15:37 S20redis-server -&gt; ../init.d/redis-serverlrwxrwxrwx 1 root root 18 Aug 24 2017 S99rc.local -&gt; ../init.d/rc.local 启动序号是20S开头是开机时的脚本启动顺序，按序号从小到大启动。K开头表示是关机时的脚本关闭顺序，按序号从大到小关闭。 3.将启动脚本软链接到开机启动目录下1ln -s /etc/init.d/redis-server-2 /etc/rc2.d/S20redis-server-2 注意：如果两个redis有主从关系的话即需要有先后启动顺序，就需要适当的增大序号，如21 1ln -s /etc/init.d/redis-server-2 /etc/rc2.d/S21redis-server-2 *也可以使用update-rc.d命令，效果相同： 1update-rc.d -f redis-server-2 defaults 20 4.取消开机启动 方法一：使用update-rc.d命令 1update-rc.d -f redis-server-slark remove 方法二：直接删除软链接 1rm -f /etc/rc2.d/S20redis-server-slark 5.关于rc.local rc.local也是开机启动脚本，从ls -l /etc/rc2.d 命令的输出结果也可以看出，它的启动序号是99。所以rc.local里的内容是在所有更高级别的初始化脚本(rc1.d rc2.d …)运行之后再执行的。]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[服务器配置 - Redis单机多实例配置]]></title>
+    <url>%2FServer-Redis-Multi-Instance.html</url>
+    <content type="text"><![CDATA[1.准备两份配置文件 可以参考Redi安装配置。Redis安装时会生成一份默认配置/etc/redis/redis.conf，几个常用配置项如下： 1vim /etc/redis/redis.conf 1234567891011121314151617181920# 端口port 6379# pid文件路径pidfile /var/run/redis/redis-server.pid# 绑定ipbind 139.xxx.xxx.xxx 127.0.0.1# 登录需要密码requirepass 123456# log文件路径logfile /var/log/redis/redis-server.log# 持久化输出的数据库文件dbfilename dump.rdb# 只增文件的文件名称appendfilename &quot;appendonly.aof&quot; 将配置文件拷贝一份，并修改下内容： 12cp /etc/redis/redis.conf /etc/redis/redis-2.confvim /etc/redis/redis-2.conf 1234567891011121314151617181920# 端口port 6789# pid文件路径pidfile /var/run/redis/redis-2.pid# 绑定ipbind 139.xxx.xxx.xxx 127.0.0.1# 登录需要密码requirepass 123456# log文件路径logfile /var/log/redis/redis-2.log# 持久化输出的数据库文件dbfilename dump-2.rdb# 只增文件的文件名称appendfilename &quot;appendonly-2.aof&quot; 2.手动启动 从不同的配置文件启动Redis实例 12redis-server /etc/redis/redis.confredis-server /etc/redis/redis-2.conf 到这里两个实例都可以正常工作了。 *3.主从配置 一些场景下需要配置Redis主从数据库，如读写分离。Redis的主从配置还是很容易的，只要修改下从库的配置文件的slaveof项即可。 1vim /etc/redis/redis-2.conf 12# 从属关系，如果是在同一台机器上可以把ip设置为127.0.0.1slaveof 139.xxx.xxx.xxx 6379 *4.设置开机启动 默认情况下只有第一个实例会开机启动，其他的实例需要手动启动，下面将讲解如何让第二个实例也开机启动。 4.1.先拷贝一份原来的启动脚本1cp /etc/init.d/redis-server /etc/init.d/redis-server-2 4.2.修改新的启动脚本1vim /etc/init.d/redis-server-2 前几行需要修改的内容如下： 12345678PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/binDAEMON=/usr/bin/redis-serverDAEMON_ARGS=/etc/redis/redis-2.confNAME=redis-server-2DESC=redis-server-2RUNDIR=/var/run/redisPIDFILE=$RUNDIR/redis-server-2.pid *以后就可以使用下面的命令来启动/停止新的实例了 12/etc/init.d/redis-server-2 start # 启动/etc/init.d/redis-server-2 stop # 停止 4.3.将新脚本加入开机启动项 方法一：使用update-rc.d命令，20是想要指定的启动序号。 1update-rc.d -f redis-server-2 defaults 20 方法二：手动添加开机启动项，可以参考这篇文章Linux设置开机启动项，两个方法的结果是相同的。 配置完成，此时敲reboot重启机器就可以实现开机自动启动这两个实例了。 *4.4.取消开机启动1update-rc.d -f redis-server-2 remove]]></content>
+      <categories>
+        <category>服务器搭建</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>服务器</tag>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python - Supervisor安装配置]]></title>
     <url>%2FServer-Supervisor-Configuration.html</url>
     <content type="text"><![CDATA[1.安装1pip install supervisor 2.初始化启动配置文件12echo_supervisord_conf &gt; /etc/supervisord.confvim /etc/supervisord.conf 最后面加上下面这两行内容，这样就可以从/etc/supervisor目录下自动加载所有的conf文件了。 12[include]files = /etc/supervisor/*.conf 3.新建项目配置文件123mkdir /var/log/supervisormkdir /etc/supervisorvim /etc/supervisor/happydev.conf 内容如下： 12345678910111213[program:happydev]directory = /var/www/happydev ;command = /var/www/happydev/venv/bin/gunicorn -w4 -b127.0.0.1:8003 --timeout 120 happy:app ;autostart = true ;startsecs = 5 ;autorestart = true ;startretries = 3 ;user = root ;redirect_stderr = true ;stdout_logfile_maxbytes = 100MB ;stdout_logfile_backups = 10 ;stdout_logfile = /var/log/supervisor/happydev.log ;environment = HAPPY_CONFIG_FILE=&quot;/var/www/happydev/happy/config/staging.py&quot;,HAPPY_PATH=&quot;/var/www/happydev&quot; ; 这里管理的进程是使用gunicorn启动的Flask项目，关于gunicorn的使用可以参考Gunicorn安装配置。 4.启动suprervisord1supervisord -c /etc/supervisord.conf 到这一步supervisor已经正常工作了。 5.常用命令5.1.停止supervisor主进程 查看supervisord进程号(pid)： 1ps aux | grep supervisord 关闭进程： 1kill [pid] 5.2.启动单个项目进程1supervisorctl start happydev 5.3.停止单个项目进程1supervisorctl stop happydev 注意：使用此命令停止的进程不会被自动重启机制重新启动 5.4.重启单个项目进程1supervisorctl restart happydev 5.5.重新加载单个项目123supervisorctl remove happydev # 移除happydev项目supervisorctl reread # 重新读取所有配置文件supervisorctl add happydev # 添加happydev项目 5.6.查看所有项目进程的运行状态1supervisorctl status]]></content>
@@ -8,8 +68,8 @@
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>Linux</tag>
+        <tag>Python</tag>
         <tag>服务器</tag>
         <tag>Supervisor</tag>
       </tags>
@@ -22,8 +82,8 @@
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>Linux</tag>
+        <tag>Python</tag>
         <tag>服务器</tag>
         <tag>Gunicorn</tag>
       </tags>
@@ -56,7 +116,7 @@
   <entry>
     <title><![CDATA[服务器配置 - Redis安装配置]]></title>
     <url>%2FServer-Redis-Configuration.html</url>
-    <content type="text"><![CDATA[1.安装1apt-get install redis-server 2.配置1vim /etc/redis/redis.conf 这里仅介绍几个基本配置 12345678# 端口port 6379# 绑定服务器IPbind 139.xxx.xxx.xxx 127.0.0.1# 登录密码requirepass 123456 3.重启1/etc/init.d/redis-server restart 这一步做完redis-server已经可以正常工作了。 4.常用命令4.1.连接1redis-cli -h 139.xxx.xxx.xxx -p 6379 -a 123456 如果是本地连接的话-h参数可以省略使用默认端口6379的话-p参数可以省略没有设置密码的话-a参数可以省略 4.2.关闭1redis-cli shutdown 4.2.启动服务器1redis-server]]></content>
+    <content type="text"><![CDATA[1.安装1apt-get install redis-server 2.配置1vim /etc/redis/redis.conf 这里仅介绍几个基本配置 1234567891011121314151617181920# 端口port 6379# pid文件路径pidfile /var/run/redis/redis-server.pid# 绑定ipbind 139.xxx.xxx.xxx 127.0.0.1# 登录需要密码requirepass 123456# log文件路径logfile /var/log/redis/redis-server.log# 持久化输出的数据库文件dbfilename dump.rdb# 只增文件的文件名称appendfilename &quot;appendonly.aof&quot; 3.重启1/etc/init.d/redis-server restart 这一步做完redis-server已经可以正常工作了。 4.常用命令4.1.连接1redis-cli -h 139.xxx.xxx.xxx -p 6379 -a 123456 如果是本地连接的话-h参数可以省略使用默认端口6379的话-p参数可以省略没有设置密码的话-a参数可以省略 4.2.关闭1redis-cli shutdown 4.2.启动服务器1redis-server 在一台机器上配置多个Redis服务器可以参考Redis单机多实例配置。]]></content>
       <categories>
         <category>服务器搭建</category>
       </categories>
@@ -117,7 +177,7 @@
   <entry>
     <title><![CDATA[GitHub教程 - Pull Request 工作流程]]></title>
     <url>%2FGitHub-Pull-Request-Workflow.html</url>
-    <content type="text"><![CDATA[1.Fork仓库 先在github上将源仓库fork到自己的仓库 12源仓库：git@github.com:southflower/slark.gitfork后：git@github.com:RichardRenn/slark.git 2.检出代码 在本地检出fork后的仓库代码 12cd ~/workspace/sourcecode/richardrenngit clone git@github.com:RichardRenn/slark.git ./slark 3.关联上游源仓库 进入代码目录，加入上游源仓库关联 12cd ./slarkgit remote add upstream git@github.com:southflower/slark.git 4.更新代码 更新源仓库代码到本地仓库 12git fetch upstreamgit merge upstream/master 5.提交代码 在本地仓库中，修改代码后提交到自己的远端仓库 123git add .git commit -m "anything"git push origin mater 6.提交PR 在github网页上提交PR在自己的仓库界面点击”New Pull Request” 7.PR合入 然后待源仓库的作者将你的PR合入即可 带分支的工作方式可以参考分支工作流程]]></content>
+    <content type="text"><![CDATA[1.Fork仓库 先在github上将源仓库fork到自己的仓库 12源仓库：git@github.com:southflower/slark.gitfork后：git@github.com:RichardRenn/slark.git 2.检出代码 在本地检出fork后的仓库代码 12cd ~/workspace/sourcecode/richardrenngit clone git@github.com:RichardRenn/slark.git ./slark 3.关联上游源仓库 进入代码目录，加入上游源仓库关联 12cd ./slarkgit remote add upstream git@github.com:southflower/slark.git 4.更新代码 更新源仓库代码到本地仓库 12git fetch upstreamgit merge upstream/master 5.提交代码 在本地仓库中，修改代码后提交到自己的远端仓库 123git add .git commit -m "anything"git push origin master 6.提交PR 在github网页上提交PR在自己的仓库界面点击”New Pull Request” 7.PR合入 然后待源仓库的作者将你的PR合入即可 带分支的工作方式可以参考分支工作流程]]></content>
       <categories>
         <category>GitHub教程</category>
       </categories>

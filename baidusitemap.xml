@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://richardrenn.coding.me/Python-Decorator.html</loc>
+    <lastmod>2019-01-12T20:01:53.663Z</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/Python-Closure.html</loc>
+    <lastmod>2019-01-12T20:01:38.294Z</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/Python-Function-Scope.html</loc>
+    <lastmod>2019-01-12T18:39:50.105Z</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/Linux-Msconfig.html</loc>
+    <lastmod>2018-12-27T14:22:04.869Z</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/Server-Redis-Multi-Instance.html</loc>
+    <lastmod>2018-12-27T14:22:04.869Z</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html</loc>
+    <lastmod>2018-12-27T14:22:04.869Z</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/Server-Redis-Configuration.html</loc>
+    <lastmod>2018-12-27T14:22:04.869Z</lastmod>
+  </url>  <url>
     <loc>https://richardrenn.coding.me/Server-Gunicorn-Configuration.html</loc>
     <lastmod>2018-12-22T16:56:53.768Z</lastmod>
   </url>  <url>
@@ -18,12 +39,6 @@
   </url>  <url>
     <loc>https://richardrenn.coding.me/Server-SSH-Key.html</loc>
     <lastmod>2018-12-22T15:43:39.930Z</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.coding.me/Server-Redis-Configuration.html</loc>
-    <lastmod>2018-12-22T15:43:29.039Z</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html</loc>
-    <lastmod>2018-12-22T15:42:04.797Z</lastmod>
   </url>  <url>
     <loc>https://richardrenn.coding.me/GitHub-Branch-Workflow.html</loc>
     <lastmod>2018-12-22T15:41:50.793Z</lastmod>
