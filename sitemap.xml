@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://richardrenn.coding.me/Python-Copy-Deepcopy.html</loc>
+    
+    <lastmod>2019-01-15T16:29:00.534Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://richardrenn.coding.me/Python-Closure.html</loc>
     
     <lastmod>2019-01-13T14:14:18.821Z</lastmod>

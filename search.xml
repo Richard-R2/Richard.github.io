@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python - 浅拷贝和深拷贝解析]]></title>
+    <url>%2FPython-Copy-Deepcopy.html</url>
+    <content type="text"><![CDATA[1.浅拷贝和深拷贝的区别 浅拷贝(copy)：仅拷贝对象，但不拷贝此对象内的子对象。深拷贝(deepcopy)：完全拷贝对象，包括其内部的子对象。 2.举例理解12345678910111213# -*- coding:utf-8 -*-import copya = &#123;0:1, 1:[1,2]&#125;a1 = copy.copy(a) # 浅拷贝a2 = copy.deepcopy(a) # 深拷贝a[1].append(3)print(a, '%x' % id(a), '%x' % id(a[1])) # 使用16进制格式化输出id值print(a1, '%x' % id(a1), '%x' % id(a1[1]))print(a2, '%x' % id(a2), '%x' % id(a2[1])) 1234输出结果：&#123;0: 1, 1: [1, 2, 3]&#125; 220a8caf2d0 220aa969e08&#123;0: 1, 1: [1, 2, 3]&#125; 220a8caf318 220aa969e08&#123;0: 1, 1: [1, 2]&#125; 220aa937c18 220aa969ec8 从输出结果进行分析：1.a、a1、a2三者的id值不同。说明不论深浅拷贝都能得到新的对象。2.a1[1]和a[1]的id值相同，a2[1]和a[1]的id值不同。说明浅拷贝不能拷贝子对象，执行浅拷贝得到的对象a1的子对象和原对象a的子对象使用的是相同的一块内存，但是执行深拷贝得到的对象a2却和原对象a完全独立。这也是为什么当a[1].append(3)后，a1[1]也跟着变了，而a2[1]却没变。 3.a.copy()和copy.copy(a)的区别 虽然两者都是浅拷贝，但是copy.copy()能够拷贝的对象更多，即某些对象本身是没有copy属性的，比如元组(tuple)。如果将上例中的a值替换为a = (1, [1,2])，那么执行a1 = a.copy()时是会报错的： 1234# -*- coding:utf-8 -*-a = (1, [1,2])a1 = a.copy() 1AttributeError: &apos;tuple&apos; object has no attribute &apos;copy&apos; 4.手写字典深拷贝123456789def deep_copy(x): '''仅适用于子对象是字典的情况''' x1 = &#123;&#125; for k, v in x.items(): if isinstance(v, dict): # 当子对象是字典类型时递归执行 x1[k] = deep_copy(v) else: x1[k] = v return x1]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>浅拷贝和深拷贝</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python - 装饰器]]></title>
     <url>%2FPython-Decorator.html</url>
     <content type="text"><![CDATA[1.装饰器的概念 装饰器(decorator):装饰器是一种闭包的使用，要理解装饰器的原理必须先理解python闭包的概念。 关于闭包的知识可以参考Python闭包。 2.举例理解1234567891011121314151617181920212223242526# -*- coding: utf-8 -*-def deco(func): print("deco") def inner_deco(*args): # 调用的enclosing作用域中的对象，inner_deco函数就是个闭包 print("inner_deco") for a in args: if not isinstance(a, int): # 参数检查语句 return 0 return func(*args) # 调用了enclosing作用域的func，所以func会被加入到inner_deco的__closure__属性中 return inner_deco@deco # 语法糖，就相当于func_sum = deco(func_sum)，此时func_sum就指向了inner_deco。可以理解为func_sum被deco装饰后变成了inner_decodef func_sum(*args): print("func_sum") return sum(args)@decodef func_min(*args): print("func_min") return min(args)# func_sum = deco(func_sum)print(func_sum(1,2,'3'))print(func_min(4,5,6)) 12345678运行结果：decodecoinner_deco0inner_decofunc_min4 @deco只是一种语法糖写法之所以打印结果中没有输出：”func_sum”，是因为在执行参数检查语句时return 0了。 3.知识点3.1 装饰器在何时生效？ 在import时就生效了，因为@deco就相当于func_sum = deco(func_sum)，是写在最外面的。如果把上述例子中最后的两个print语句注释掉的话，执行结果将会是： 12decodeco 3.2 装饰器能不能返回别的函数？ 当然可以，这样就可以修改函数的功能了。即被装饰的函数的功能取决于inner_deco返回的是哪个函数。]]></content>
@@ -68,8 +80,8 @@
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Python</tag>
+        <tag>Linux</tag>
         <tag>服务器</tag>
         <tag>Supervisor</tag>
       </tags>
@@ -82,8 +94,8 @@
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Python</tag>
+        <tag>Linux</tag>
         <tag>服务器</tag>
         <tag>Gunicorn</tag>
       </tags>
