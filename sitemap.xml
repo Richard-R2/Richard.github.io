@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://richardrenn.coding.me/Python-Copy-Deepcopy.html</loc>
+    
+    <lastmod>2019-01-17T15:38:38.833Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://richardrenn.coding.me/Server-Redis-Multi-Instance.html</loc>
     
     <lastmod>2019-01-17T15:20:25.743Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://richardrenn.coding.me/Python-Decorator.html</loc>
     
     <lastmod>2019-01-17T13:17:34.866Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://richardrenn.coding.me/Python-Copy-Deepcopy.html</loc>
-    
-    <lastmod>2019-01-15T16:29:00.534Z</lastmod>
     
   </url>
   
