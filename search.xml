@@ -75,7 +75,7 @@
   <entry>
     <title><![CDATA[服务器配置 - Redis单机多实例配置]]></title>
     <url>%2FServer-Redis-Multi-Instance.html</url>
-    <content type="text"><![CDATA[1.准备两份配置文件 可以参考Redi安装配置。Redis安装时会生成一份默认配置/etc/redis/redis.conf，几个常用配置项如下： 1vim /etc/redis/redis.conf 1234567891011121314151617181920# 端口port 6379# pid文件路径pidfile /var/run/redis/redis-server.pid# 绑定ipbind 139.xxx.xxx.xxx 127.0.0.1# 登录需要密码requirepass 123456# log文件路径logfile /var/log/redis/redis-server.log# 持久化输出的数据库文件dbfilename dump.rdb# 只增文件的文件名称appendfilename &quot;appendonly.aof&quot; 将配置文件拷贝一份，并修改下内容： 12cp /etc/redis/redis.conf /etc/redis/redis-2.confvim /etc/redis/redis-2.conf 1234567891011121314151617181920# 端口port 6789# pid文件路径pidfile /var/run/redis/redis-2.pid# 绑定ipbind 139.xxx.xxx.xxx 127.0.0.1# 登录需要密码requirepass 123456# log文件路径logfile /var/log/redis/redis-2.log# 持久化输出的数据库文件dbfilename dump-2.rdb# 只增文件的文件名称appendfilename &quot;appendonly-2.aof&quot; 2.手动启动 从不同的配置文件启动Redis实例 12redis-server /etc/redis/redis.confredis-server /etc/redis/redis-2.conf 到这里两个实例都可以正常工作了。 *3.主从配置 一些场景下需要配置Redis主从数据库，如读写分离。Redis的主从配置还是很容易的，只要修改下从库的配置文件的slaveof项即可。 1vim /etc/redis/redis-2.conf 12# 从属关系，如果是在同一台机器上可以把ip设置为127.0.0.1slaveof 139.xxx.xxx.xxx 6379 *4.设置开机启动 默认情况下只有第一个实例会开机启动，其他的实例需要手动启动，下面将讲解如何让第二个实例也开机启动。 4.1.先拷贝一份原来的启动脚本1cp /etc/init.d/redis-server /etc/init.d/redis-server-2 4.2.修改新的启动脚本1vim /etc/init.d/redis-server-2 前几行需要修改的内容如下： 12345678PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/binDAEMON=/usr/bin/redis-serverDAEMON_ARGS=/etc/redis/redis-2.confNAME=redis-server-2DESC=redis-server-2RUNDIR=/var/run/redisPIDFILE=$RUNDIR/redis-server-2.pid *以后就可以使用下面的命令来启动/停止新的实例了 12/etc/init.d/redis-server-2 start # 启动/etc/init.d/redis-server-2 stop # 停止 4.3.将新脚本加入开机启动项 方法一：使用update-rc.d命令，20是想要指定的启动序号。 1update-rc.d -f redis-server-2 defaults 20 方法二：手动添加开机启动项，可以参考这篇文章Linux设置开机启动项，两个方法的结果是相同的。 配置完成，此时敲reboot重启机器就可以实现开机自动启动这两个实例了。 *4.4.取消开机启动1update-rc.d -f redis-server-2 remove]]></content>
+    <content type="text"><![CDATA[1.拷贝配置文件 可以参考Redis安装配置。Redis安装时会生成一份默认配置/etc/redis/redis.conf，几个常用配置项如下： 1vim /etc/redis/redis.conf 1234567891011121314151617181920# 端口port 6379# pid文件路径pidfile /var/run/redis/redis-server.pid# 绑定ipbind 139.xxx.xxx.xxx 127.0.0.1# 登录需要密码requirepass 123456# log文件路径logfile /var/log/redis/redis-server.log# 持久化输出的数据库文件dbfilename dump.rdb# 只增文件的文件名称appendfilename &quot;appendonly.aof&quot; 将配置文件拷贝一份，并修改下内容： 12cp /etc/redis/redis.conf /etc/redis/redis-2.confvim /etc/redis/redis-2.conf 1234567891011121314151617181920# 端口port 6789# pid文件路径pidfile /var/run/redis/redis-2.pid# 绑定ipbind 139.xxx.xxx.xxx 127.0.0.1# 登录需要密码requirepass 123456# log文件路径logfile /var/log/redis/redis-2.log# 持久化输出的数据库文件dbfilename dump-2.rdb# 只增文件的文件名称appendfilename &quot;appendonly-2.aof&quot; 2.手动启动 从不同的配置文件启动Redis实例 12redis-server /etc/redis/redis.confredis-server /etc/redis/redis-2.conf 到这里两个实例都可以正常工作了。 *3.主从配置 一些场景下需要配置Redis主从数据库，如读写分离。Redis的主从配置还是很容易的，只要修改下从库的配置文件的slaveof项即可。 1vim /etc/redis/redis-2.conf 12# 从属关系，如果是在同一台机器上可以把ip设置为127.0.0.1slaveof 139.xxx.xxx.xxx 6379 *4.设置开机启动 默认情况下只有第一个实例会开机启动，其他的实例需要手动启动，下面将讲解如何让第二个实例也开机启动。 4.1.先拷贝一份原来的启动脚本1cp /etc/init.d/redis-server /etc/init.d/redis-server-2 4.2.修改新的启动脚本1vim /etc/init.d/redis-server-2 前几行需要修改的内容如下： 12345678PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/binDAEMON=/usr/bin/redis-serverDAEMON_ARGS=/etc/redis/redis-2.confNAME=redis-server-2DESC=redis-server-2RUNDIR=/var/run/redisPIDFILE=$RUNDIR/redis-server-2.pid *以后就可以使用下面的命令来启动/停止新的实例了 12/etc/init.d/redis-server-2 start # 启动/etc/init.d/redis-server-2 stop # 停止 4.3.将新脚本加入开机启动项 方法一：使用update-rc.d命令，20是想要指定的启动序号。 1update-rc.d -f redis-server-2 defaults 20 方法二：手动添加开机启动项，可以参考这篇文章Linux设置开机启动项，两个方法的结果是相同的。 配置完成，此时敲reboot重启机器就可以实现开机自动启动这两个实例了。 *4.4.取消开机启动1update-rc.d -f redis-server-2 remove]]></content>
       <categories>
         <category>服务器搭建</category>
       </categories>
@@ -93,8 +93,8 @@
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>Linux</tag>
+        <tag>Python</tag>
         <tag>服务器</tag>
         <tag>Supervisor</tag>
       </tags>
@@ -107,8 +107,8 @@
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>Linux</tag>
+        <tag>Python</tag>
         <tag>服务器</tag>
         <tag>Gunicorn</tag>
       </tags>
