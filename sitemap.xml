@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://richardrenn.coding.me/Python-List-Slice.html</loc>
+    
+    <lastmod>2019-01-17T14:42:05.202Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://richardrenn.coding.me/Python-Decorator.html</loc>
+    
+    <lastmod>2019-01-17T13:17:34.866Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://richardrenn.coding.me/Python-Copy-Deepcopy.html</loc>
     
     <lastmod>2019-01-15T16:29:00.534Z</lastmod>
@@ -16,16 +30,16 @@
   </url>
   
   <url>
-    <loc>https://richardrenn.coding.me/Python-Decorator.html</loc>
+    <loc>https://richardrenn.coding.me/Python-Function-Scope.html</loc>
     
-    <lastmod>2019-01-12T20:01:53.663Z</lastmod>
+    <lastmod>2019-01-12T18:39:50.105Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://richardrenn.coding.me/Python-Function-Scope.html</loc>
+    <loc>https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html</loc>
     
-    <lastmod>2019-01-12T18:39:50.105Z</lastmod>
+    <lastmod>2018-12-27T14:22:04.869Z</lastmod>
     
   </url>
   
@@ -38,13 +52,6 @@
   
   <url>
     <loc>https://richardrenn.coding.me/Server-Redis-Multi-Instance.html</loc>
-    
-    <lastmod>2018-12-27T14:22:04.869Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html</loc>
     
     <lastmod>2018-12-27T14:22:04.869Z</lastmod>
     
