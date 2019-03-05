@@ -1,3 +1,4 @@
+https://richardrenn.coding.me/Python-Super.html
 https://richardrenn.coding.me/Python-List-Slice.html
 https://richardrenn.coding.me/Python-Copy-Deepcopy.html
 https://richardrenn.coding.me/Python-Decorator.html

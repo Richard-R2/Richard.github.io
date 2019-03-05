@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://richardrenn.coding.me/Python-Super.html</loc>
+    
+    <lastmod>2019-03-05T21:13:39.833Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://richardrenn.coding.me/Git-Configuration.html</loc>
+    
+    <lastmod>2019-03-05T14:23:15.001Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html</loc>
+    
+    <lastmod>2019-03-05T14:20:45.061Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://richardrenn.coding.me/GitHub-Branch-Workflow.html</loc>
+    
+    <lastmod>2019-03-05T13:24:41.415Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://richardrenn.coding.me/about/index.html</loc>
     
     <lastmod>2019-03-05T09:08:15.249Z</lastmod>
@@ -58,13 +86,6 @@
   </url>
   
   <url>
-    <loc>https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html</loc>
-    
-    <lastmod>2018-12-27T14:22:04.869Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://richardrenn.coding.me/Server-Redis-Configuration.html</loc>
     
     <lastmod>2018-12-27T14:22:04.869Z</lastmod>
@@ -110,20 +131,6 @@
     <loc>https://richardrenn.coding.me/Server-SSH-Key.html</loc>
     
     <lastmod>2018-12-22T15:43:39.930Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://richardrenn.coding.me/GitHub-Branch-Workflow.html</loc>
-    
-    <lastmod>2018-12-22T15:41:50.793Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://richardrenn.coding.me/Git-Configuration.html</loc>
-    
-    <lastmod>2018-12-22T15:41:36.755Z</lastmod>
     
   </url>
   
