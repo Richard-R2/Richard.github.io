@@ -120,7 +120,7 @@
 <meta property="og:description" content="本文将解析Python多继承中Super()函数的方法解析顺序(MRO)，并举例理解它所使用的C3算法的工作原理。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://richardrenn.coding.me/images/Python-Super/Topological-Sorting.png">
-<meta property="og:updated_time" content="2019-03-05T21:24:39.518Z">
+<meta property="og:updated_time" content="2019-03-11T17:24:01.280Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python - Super()继承顺序 - MRO顺序C3算法解析">
 <meta name="twitter:description" content="本文将解析Python多继承中Super()函数的方法解析顺序(MRO)，并举例理解它所使用的C3算法的工作原理。">
@@ -420,7 +420,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-06 05:24:39" itemprop="dateModified" datetime="2019-03-06T05:24:39+08:00">2019-03-06</time>
+                <time title="修改时间：2019-03-12 01:24:01" itemprop="dateModified" datetime="2019-03-12T01:24:01+08:00">2019-03-12</time>
               
             
           </span>
@@ -545,17 +545,17 @@
 <p>C3算法的本质就是Merge，<strong>Merge规则</strong>如下：<br><strong>取第一序列的第一元素，与所有后续序列除第一元素外的所有元素进行比较。</strong><br><strong>若不存在相同者，则取出这个元素并从全部序列中删除；</strong><br><strong>若存在，则跳过此序列，取下一序列的第一元素往后进行相同的比较，直到可以取出某个元素并从全部序列中删除。</strong><br><strong>然后回到最前面的序列，取第一元素进行下一轮循环比较，直到取出所有元素。取出的元素组成的列表即为<strong>mro</strong>列表。</strong></p>
 </blockquote>
 <blockquote>
-<p>之所以使用这个算法，是因为基于深度优先搜索算法（见后文）不满足本地优先级和单调性的问题。<br><strong>本地优先级</strong>：指声明时父类的顺序，比如D(B,C)，则访问D类对象属性时，应该优先查找B，然后再查找C。<br><strong>单调性</strong>：如果在D的解析顺序中，B在C的前面，那么在D的所有子类里，也必须满足这个顺序。</p>
+<p>之所以使用这个算法，是因为基于深度优先的搜索算法（见后文）不满足本地优先级和单调性的需求。<br><strong>本地优先级</strong>：指声明时父类的顺序，比如D(B,C)，则访问D类对象属性时，应该优先查找B，然后再查找C。<br><strong>单调性</strong>：如果在D的解析顺序中，B在C的前面，那么在D的所有子类里，也必须满足这个顺序。</p>
 </blockquote>
 <p>试看以下代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span><span class="params">(B, C)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">E</span><span class="params">(D, C)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
 <p>假设X.<strong>mro</strong> = L(X), +为merge，则C3算法的过程为：</p>
 <blockquote>
-<p>L(E) = E + L(D) + L(C) + DC<br>L(E) = E + [D + L(B) + L(C) + BC] + [C+L(A)+A] + DC<br>L(E) = E + [D + [B+L(A)+A] + [C+L(A)+A] + BC] + [C+A+A] + DC<br>L(E) = E + [D + BA + CA + BC] + CA + DC<br>L(E) = E + DBCA + CA + DC<br>L(E) = EDBCA</p>
+<p>L(E) = E + L(D) + L(C) + DC<br>L(E) = E + [D+L(B)+L(C)+BC] + [C+L(A)+A] + DC<br>L(E) = E + [D + [B+L(A)+A] + [C+L(A)+A] + BC] + [C+A+A] + DC<br>L(E) = E + [D + BA + CA + BC] + CA + DC<br>L(E) = E + DBCA + CA + DC<br>L(E) = EDBCA</p>
 </blockquote>
 <blockquote>
 <p>排序结果为：E → D → B → C → A → object</p>
 </blockquote>
-<p>到此为止，基本可以理解MRO的排序算法了。</p>
+<p>到此为止，基本可以理解MRO的排序算法的运算过程了。</p>
 <hr>
 <h2 id="3-如何直接查看某个类的继承顺序？"><a href="#3-如何直接查看某个类的继承顺序？" class="headerlink" title="3.如何直接查看某个类的继承顺序？"></a>3.如何直接查看某个类的继承顺序？</h2><p>每个类都有对应的<strong>mro</strong>属性和mro()方法：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E.__mro__</span><br><span class="line">E.mro()</span><br></pre></td></tr></table></figure>
@@ -577,7 +577,7 @@
 </blockquote>
 <hr>
 <h2 id="5-引申：介绍下广度优先算法"><a href="#5-引申：介绍下广度优先算法" class="headerlink" title="5.引申：介绍下广度优先算法"></a>5.引申：介绍下广度优先算法</h2><blockquote>
-<p>广度优先算法是优先查找距离最近的节点，即横向查找。<br>使用第二部分的代码，排序结果为：E → D → C → B → A → object</p>
+<p>广度优先算法是优先查找距离最近的节点，即横向查找。<br>则上面的代码排序结果为：D → B → C → A<br>而使用第二部分的代码，排序结果为：E → D → C → B → A → object</p>
 </blockquote>
 
       
