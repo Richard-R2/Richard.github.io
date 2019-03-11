@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://richardrenn.coding.me/about/index.html</loc>
+    
+    <lastmod>2019-03-11T12:19:19.219Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://richardrenn.coding.me/Python-Super.html</loc>
     
-    <lastmod>2019-03-05T21:13:39.833Z</lastmod>
+    <lastmod>2019-03-05T21:24:39.518Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>https://richardrenn.coding.me/GitHub-Branch-Workflow.html</loc>
     
     <lastmod>2019-03-05T13:24:41.415Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://richardrenn.coding.me/about/index.html</loc>
-    
-    <lastmod>2019-03-05T09:08:15.249Z</lastmod>
     
   </url>
   
