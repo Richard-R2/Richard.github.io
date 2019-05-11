@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://richardrenn.coding.me/Server-SSH-Key.html</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/Server-Supervisor-Configuration.html</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/Server-Redis-Multi-Instance.html</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/Server-Redis-Configuration.html</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/Server-Gunicorn-Configuration.html</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/Python-Decorator.html</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/Python-Closure.html</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/Git-Configuration.html</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/GitHub-Branch-Workflow.html</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.coding.me/GitHub-Large-File-Storage.html</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
     <loc>https://richardrenn.coding.me/Linux-Msconfig.html</loc>
     <lastmod>2019-05-06</lastmod>
   </url>  <url>
     <loc>https://richardrenn.coding.me/Python-Copy-Deepcopy.html</loc>
-    <lastmod>2019-05-06</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.coding.me/Python-Decorator.html</loc>
     <lastmod>2019-05-06</lastmod>
   </url>  <url>
     <loc>https://richardrenn.coding.me/Python-Function-Scope.html</loc>
@@ -25,34 +55,7 @@
     <loc>https://richardrenn.coding.me/Server-Configuration.html</loc>
     <lastmod>2019-05-06</lastmod>
   </url>  <url>
-    <loc>https://richardrenn.coding.me/Server-Redis-Multi-Instance.html</loc>
-    <lastmod>2019-05-06</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.coding.me/Server-Supervisor-Configuration.html</loc>
-    <lastmod>2019-05-06</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.coding.me/Git-Configuration.html</loc>
-    <lastmod>2019-03-05</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html</loc>
-    <lastmod>2019-03-05</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.coding.me/GitHub-Branch-Workflow.html</loc>
-    <lastmod>2019-03-05</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.coding.me/Python-Closure.html</loc>
-    <lastmod>2019-01-13</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.coding.me/Server-Redis-Configuration.html</loc>
-    <lastmod>2018-12-27</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.coding.me/Server-Gunicorn-Configuration.html</loc>
-    <lastmod>2018-12-22</lastmod>
-  </url>  <url>
     <loc>https://richardrenn.coding.me/Server-Nginx-Configuration.html</loc>
-    <lastmod>2018-12-22</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.coding.me/Server-SSH-Key.html</loc>
     <lastmod>2018-12-22</lastmod>
   </url>  <url>
     <loc>https://richardrenn.coding.me/hello-world.html</loc>

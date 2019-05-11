@@ -111,20 +111,21 @@
 
 
 
-  <meta name="description" content="GitHub的PR机制一般用于多人协同完成项目开发的工作，可以使开发更便捷。本文将介绍Pull-Request工作流程。">
-<meta name="keywords" content="Pull Request 工作流程,Git,GitHub,GitHub教程">
+  <meta name="description" content="GitHub限制单个文件不能超过100M。本文将介绍如何使用Git大文件存储扩展LFS（Large File Storage）来管理超过100M大小的大文件。">
+<meta name="keywords" content="存储大文件,Git,GitHub,GitHub教程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GitHub教程 - Pull Request 工作流程">
-<meta property="og:url" content="https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html">
+<meta property="og:title" content="GitHub - 存储大文件">
+<meta property="og:url" content="https://richardrenn.coding.me/GitHub-Large-File-Storage.html">
 <meta property="og:site_name" content="灰帽子">
-<meta property="og:description" content="GitHub的PR机制一般用于多人协同完成项目开发的工作，可以使开发更便捷。本文将介绍Pull-Request工作流程。">
+<meta property="og:description" content="GitHub限制单个文件不能超过100M。本文将介绍如何使用Git大文件存储扩展LFS（Large File Storage）来管理超过100M大小的大文件。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://richardrenn.coding.me/images/GitHub-Pull-Request-Workflow/pull-request.png">
-<meta property="og:updated_time" content="2019-05-11T16:21:59.718Z">
+<meta property="og:image" content="https://richardrenn.coding.me/images/GitHub-Large-File-Storage/error-file-size-limit.png">
+<meta property="og:image" content="https://richardrenn.coding.me/images/GitHub-Large-File-Storage/git-push-successfully.png">
+<meta property="og:updated_time" content="2019-05-11T16:19:19.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GitHub教程 - Pull Request 工作流程">
-<meta name="twitter:description" content="GitHub的PR机制一般用于多人协同完成项目开发的工作，可以使开发更便捷。本文将介绍Pull-Request工作流程。">
-<meta name="twitter:image" content="https://richardrenn.coding.me/images/GitHub-Pull-Request-Workflow/pull-request.png">
+<meta name="twitter:title" content="GitHub - 存储大文件">
+<meta name="twitter:description" content="GitHub限制单个文件不能超过100M。本文将介绍如何使用Git大文件存储扩展LFS（Large File Storage）来管理超过100M大小的大文件。">
+<meta name="twitter:image" content="https://richardrenn.coding.me/images/GitHub-Large-File-Storage/error-file-size-limit.png">
 
 
 
@@ -133,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html">
+  <link rel="canonical" href="https://richardrenn.coding.me/GitHub-Large-File-Storage.html">
 
 
 
@@ -143,7 +144,7 @@
   };
 </script>
 
-  <title>GitHub教程 - Pull Request 工作流程 | 灰帽子 - 任令仓技术博客</title>
+  <title>GitHub - 存储大文件 | 灰帽子 - 任令仓技术博客</title>
   
 
 
@@ -417,7 +418,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html">
+    <link itemprop="mainEntityOfPage" href="https://richardrenn.coding.me/GitHub-Large-File-Storage.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="任令仓">
@@ -434,7 +435,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">GitHub教程 - Pull Request 工作流程
+          <h2 class="post-title" itemprop="name headline">GitHub - 存储大文件
 
               
             
@@ -460,7 +461,7 @@
                 
               
 
-              <time title="创建时间：2018-12-18 20:27:28" itemprop="dateCreated datePublished" datetime="2018-12-18T20:27:28+08:00">2018-12-18</time>
+              <time title="创建时间：2019-05-11 23:25:37" itemprop="dateCreated datePublished" datetime="2019-05-11T23:25:37+08:00">2019-05-11</time>
             
 
             
@@ -477,7 +478,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-12 00:21:59" itemprop="dateModified" datetime="2019-05-12T00:21:59+08:00">2019-05-12</time>
+                <time title="修改时间：2019-05-12 00:19:19" itemprop="dateModified" datetime="2019-05-12T00:19:19+08:00">2019-05-12</time>
               
             
           </span>
@@ -509,8 +510,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/GitHub-Pull-Request-Workflow.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/GitHub-Pull-Request-Workflow.html" itemprop="commentCount"></span>
+                <a href="/GitHub-Large-File-Storage.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/GitHub-Large-File-Storage.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -518,7 +519,7 @@
 
           
           
-             <span id="/GitHub-Pull-Request-Workflow.html" class="leancloud_visitors" data-flag-title="GitHub教程 - Pull Request 工作流程">
+             <span id="/GitHub-Large-File-Storage.html" class="leancloud_visitors" data-flag-title="GitHub - 存储大文件">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -543,7 +544,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">618</span>
+                <span title="本文字数">541</span>
               
 
               
@@ -563,7 +564,7 @@
           
 
           
-              <div class="post-description">GitHub的PR机制一般用于多人协同完成项目开发的工作，可以使开发更便捷。本文将介绍Pull-Request工作流程。</div>
+              <div class="post-description">GitHub限制单个文件不能超过100M。本文将介绍如何使用Git大文件存储扩展LFS（Large File Storage）来管理超过100M大小的大文件。</div>
           
 
         </div>
@@ -579,37 +580,34 @@
       
 
       
-        <h2 id="1-Fork仓库"><a href="#1-Fork仓库" class="headerlink" title="1.Fork仓库"></a>1.Fork仓库</h2><blockquote>
-<p>先在github上将源仓库fork到自己的仓库</p>
+        <h2 id="问题的产生"><a href="#问题的产生" class="headerlink" title="问题的产生"></a>问题的产生</h2><blockquote>
+<p>我在GitHub上有一个仓库用来存放收集到的各种技术类书籍的电子版，但是众所周知GitHub默认情况下是不支持存储超过100M的单个文件的，其实超过50M时就会有Warning，所以当我push比较大的PDF版的书籍（比如<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1JpY2hhcmRSZW5uL0Jvb2tzL2Jsb2IvbWFzdGVyL0phdmFTY3JpcHQvSmF2YVNjcmlwdC1ET00lRTclQkMlOTYlRTclQTglOEIlRTglODklQkElRTYlOUMlQUYtJUU0JUI4JUFEJUU2JTk2JTg3JUU3JUFDJUFDMiVFNyU4OSU4OC5wZGY=" title="https://github.com/RichardRenn/Books/blob/master/JavaScript/JavaScript-DOM%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF-%E4%B8%AD%E6%96%87%E7%AC%AC2%E7%89%88.pdf">JavaScript-DOM编程艺术-中文第2版.pdf<i class="fa fa-external-link"></i></span>）时就会抛Error：</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">源仓库：git@github.com:southflower/slark.git</span><br><span class="line">fork后：git@github.com:RichardRenn/slark.git</span><br></pre></td></tr></table></figure>
-<h2 id="2-检出代码"><a href="#2-检出代码" class="headerlink" title="2.检出代码"></a>2.检出代码</h2><blockquote>
-<p>在本地检出fork后的仓库代码</p>
+<p><img src="/images/GitHub-Large-File-Storage/error-file-size-limit.png" alt="error-file-size-limit"></p>
+<blockquote>
+<p>下面是使用Git大文件存储扩展LFS来使GitHub支持大文件的版本管理的步骤：</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/workspace/sourcecode/richardrenn</span><br><span class="line">git <span class="built_in">clone</span> git@github.com:RichardRenn/slark.git ./slark</span><br></pre></td></tr></table></figure>
-<h2 id="3-关联上游源仓库"><a href="#3-关联上游源仓库" class="headerlink" title="3.关联上游源仓库"></a>3.关联上游源仓库</h2><blockquote>
-<p>进入代码目录，加入上游源仓库关联</p>
+<h2 id="1-安装lfs"><a href="#1-安装lfs" class="headerlink" title="1.安装lfs"></a>1.安装lfs</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git lfs install</span><br></pre></td></tr></table></figure>
+<h2 id="2-添加想要被托管的大文件"><a href="#2-添加想要被托管的大文件" class="headerlink" title="2.添加想要被托管的大文件"></a>2.添加想要被托管的大文件</h2><blockquote>
+<p>也可以直接添加一类文件，比如我的PDF文件</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./slark</span><br><span class="line">git remote add upstream git@github.com:southflower/slark.git</span><br></pre></td></tr></table></figure>
-<h2 id="4-更新代码"><a href="#4-更新代码" class="headerlink" title="4.更新代码"></a>4.更新代码</h2><blockquote>
-<p>更新源仓库代码到本地仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git lfs track <span class="string">"*.pdf"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>同时把仓库根目录下的.gitattributes也加入到git管理下</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch upstream</span><br><span class="line">git merge upstream/master</span><br></pre></td></tr></table></figure>
-<h2 id="5-提交代码"><a href="#5-提交代码" class="headerlink" title="5.提交代码"></a>5.提交代码</h2><blockquote>
-<p>在本地仓库中，修改代码后提交到自己的远端仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .gitattributes</span><br></pre></td></tr></table></figure>
+<h2 id="3-正常提交"><a href="#3-正常提交" class="headerlink" title="3. 正常提交"></a>3. 正常提交</h2><blockquote>
+<p>和正常的git提交命令一样</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"anything"</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-<h2 id="6-提交PR"><a href="#6-提交PR" class="headerlink" title="6.提交PR"></a>6.提交PR</h2><blockquote>
-<p>在github网页上提交PR<br>在自己的仓库界面点击”New Pull Request”</p>
-</blockquote>
-<p><img src="/images/GitHub-Pull-Request-Workflow/pull-request.png" alt="pull-request"></p>
-<h2 id="7-PR合入"><a href="#7-PR合入" class="headerlink" title="7.PR合入"></a>7.PR合入</h2><blockquote>
-<p>然后待源仓库的作者将你的PR合入即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add file.pdf</span><br><span class="line">git commit -m <span class="string">"Add new JS book"</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<p><img src="/images/GitHub-Large-File-Storage/git-push-successfully.png" alt="git-push-successfully"></p>
+<blockquote>
+<p>以上就是全部的步骤，下面是福利~</p>
 </blockquote>
 <hr>
-<ul>
-<li>带分支的工作方式可以参考<a href="/GitHub-Branch-Workflow.html">&gt;&gt;传送门 - 分支工作流程&lt;&lt;</a></li>
-</ul>
+<blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1JpY2hhcmRSZW5uL0Jvb2tz" title="https://github.com/RichardRenn/Books">&gt;&gt;传送门 - 我的书架&lt;&lt;<i class="fa fa-external-link"></i></span><br>有需要的同学可以下载下来，哦，最好是挑对自己有用书籍下载单个文件，因为整个仓库可能会有几十个G。</p>
+</blockquote>
 
       
     </div>
@@ -672,7 +670,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html" title="GitHub教程 - Pull Request 工作流程">https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html</a>
+    <a href="https://richardrenn.coding.me/GitHub-Large-File-Storage.html" title="GitHub - 存储大文件">https://richardrenn.coding.me/GitHub-Large-File-Storage.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
@@ -700,8 +698,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hello-world.html" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/Python-Super.html" rel="next" title="Python - Super()继承顺序 - MRO顺序C3算法解析">
+                <i class="fa fa-chevron-left"></i> Python - Super()继承顺序 - MRO顺序C3算法解析
               </a>
             
           </div>
@@ -709,10 +707,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/GitHub-Branch-Workflow.html" rel="prev" title="GitHub教程 - 分支工作流程">
-                GitHub教程 - 分支工作流程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -876,7 +870,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Fork仓库"><span class="nav-text">1.Fork仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-检出代码"><span class="nav-text">2.检出代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-关联上游源仓库"><span class="nav-text">3.关联上游源仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-更新代码"><span class="nav-text">4.更新代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-提交代码"><span class="nav-text">5.提交代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-提交PR"><span class="nav-text">6.提交PR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-PR合入"><span class="nav-text">7.PR合入</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题的产生"><span class="nav-text">问题的产生</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装lfs"><span class="nav-text">1.安装lfs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-添加想要被托管的大文件"><span class="nav-text">2.添加想要被托管的大文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-正常提交"><span class="nav-text">3. 正常提交</span></a></li></ol></div>
             
 
           </div>
