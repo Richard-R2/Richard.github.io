@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[GitHub - 存储大文件]]></title>
     <url>%2FGitHub-Large-File-Storage.html</url>
-    <content type="text"><![CDATA[问题的产生 我在GitHub上有一个仓库用来存放收集到的各种技术类书籍的电子版，但是众所周知GitHub默认情况下是不支持存储超过100M的单个文件的，其实超过50M时就会有Warning，所以当我push比较大的PDF版的书籍（比如JavaScript-DOM编程艺术-中文第2版.pdf）时就会抛Error： 下面是使用Git大文件存储扩展LFS来使GitHub支持大文件的版本管理的步骤： 1.安装lfs1git lfs install 2.添加想要被托管的大文件 也可以直接添加一类文件，比如我的PDF文件 1git lfs track "*.pdf" 同时把仓库根目录下的.gitattributes也加入到git管理下 1git add .gitattributes 3. 正常提交 和正常的git提交命令一样 123git add file.pdfgit commit -m "Add new JS book"git push origin master 以上就是全部的步骤，下面是福利~ &gt;&gt;传送门 - 我的书架&lt;&lt;有需要的同学可以下载下来，哦，最好是挑对自己有用书籍下载单个文件，因为整个仓库可能会有几十个G。]]></content>
+    <content type="text"><![CDATA[问题的产生 我在GitHub上有一个仓库用来存放收集到的各种技术类书籍的电子版，但是众所周知GitHub默认情况下是不支持存储超过100M的单个文件的（其实超过50M时就会有Warning）。当我push比较大的PDF版的书籍（比如JavaScript-DOM编程艺术-中文第2版.pdf）时就会抛Error：1remote: error: File xxx is 109.19 MB; this exceeds GitHub&apos;s file size limit of 100.00 MB 下面是使用Git大文件存储扩展LFS来使GitHub支持大文件的版本管理的步骤： 1.安装lfs1git lfs install 2.添加想要被托管的大文件 也可以直接添加一类文件，比如我的PDF文件 1git lfs track "*.pdf" 同时把仓库根目录下的.gitattributes也加入到git管理下 1git add .gitattributes 3. 正常提交 和正常的git提交命令一样 123git add file.pdfgit commit -m "Add new JS book"git push origin master 以上就是全部的步骤，下面是福利~ 福利 - 书架 &gt;&gt;传送门 - 我的书架&lt;&lt;有需要的同学可以下载下来，哦，最好是挑对自己有用书籍下载单个文件，因为整个仓库可能会有几十个G。]]></content>
       <categories>
         <category>GitHub教程</category>
       </categories>

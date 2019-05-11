@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://richardrenn.coding.me/GitHub-Large-File-Storage.html</loc>
+    
+    <lastmod>2019-05-11T16:40:29.951Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://richardrenn.coding.me/Server-SSH-Key.html</loc>
     
     <lastmod>2019-05-11T16:26:20.842Z</lastmod>
@@ -68,13 +75,6 @@
     <loc>https://richardrenn.coding.me/GitHub-Branch-Workflow.html</loc>
     
     <lastmod>2019-05-11T16:21:12.056Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://richardrenn.coding.me/GitHub-Large-File-Storage.html</loc>
-    
-    <lastmod>2019-05-11T16:19:19.689Z</lastmod>
     
   </url>
   
