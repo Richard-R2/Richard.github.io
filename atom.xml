@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://richardrenn.coding.me/"/>
+  <link href="https://richardrenn.github.io/"/>
   <updated>2019-05-11T16:40:29.951Z</updated>
-  <id>https://richardrenn.coding.me/</id>
+  <id>https://richardrenn.github.io/</id>
   
   <author>
     <name>任令仓</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>GitHub - 存储大文件</title>
-    <link href="https://richardrenn.coding.me/GitHub-Large-File-Storage.html"/>
-    <id>https://richardrenn.coding.me/GitHub-Large-File-Storage.html</id>
+    <link href="https://richardrenn.github.io/GitHub-Large-File-Storage.html"/>
+    <id>https://richardrenn.github.io/GitHub-Large-File-Storage.html</id>
     <published>2019-05-11T15:25:37.000Z</published>
     <updated>2019-05-11T16:40:29.951Z</updated>
     
@@ -31,19 +31,19 @@
     
     </summary>
     
-      <category term="GitHub教程" scheme="https://richardrenn.coding.me/categories/GitHub%E6%95%99%E7%A8%8B/"/>
+      <category term="GitHub教程" scheme="https://richardrenn.github.io/categories/GitHub%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Git" scheme="https://richardrenn.coding.me/tags/Git/"/>
+      <category term="Git" scheme="https://richardrenn.github.io/tags/Git/"/>
     
-      <category term="GitHub" scheme="https://richardrenn.coding.me/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://richardrenn.github.io/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>Python - Super()继承顺序 - MRO顺序C3算法解析</title>
-    <link href="https://richardrenn.coding.me/Python-Super.html"/>
-    <id>https://richardrenn.coding.me/Python-Super.html</id>
+    <link href="https://richardrenn.github.io/Python-Super.html"/>
+    <id>https://richardrenn.github.io/Python-Super.html</id>
     <published>2019-03-05T14:29:39.000Z</published>
     <updated>2019-05-06T16:08:15.392Z</updated>
     
@@ -55,23 +55,23 @@
     
     </summary>
     
-      <category term="Python" scheme="https://richardrenn.coding.me/categories/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://richardrenn.coding.me/tags/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/tags/Python/"/>
     
-      <category term="Super()继承顺序" scheme="https://richardrenn.coding.me/tags/Super-%E7%BB%A7%E6%89%BF%E9%A1%BA%E5%BA%8F/"/>
+      <category term="Super()继承顺序" scheme="https://richardrenn.github.io/tags/Super-%E7%BB%A7%E6%89%BF%E9%A1%BA%E5%BA%8F/"/>
     
-      <category term="MRO" scheme="https://richardrenn.coding.me/tags/MRO/"/>
+      <category term="MRO" scheme="https://richardrenn.github.io/tags/MRO/"/>
     
-      <category term="C3算法" scheme="https://richardrenn.coding.me/tags/C3%E7%AE%97%E6%B3%95/"/>
+      <category term="C3算法" scheme="https://richardrenn.github.io/tags/C3%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>Python - 数组切片、更新、排序</title>
-    <link href="https://richardrenn.coding.me/Python-List-Slice.html"/>
-    <id>https://richardrenn.coding.me/Python-List-Slice.html</id>
+    <link href="https://richardrenn.github.io/Python-List-Slice.html"/>
+    <id>https://richardrenn.github.io/Python-List-Slice.html</id>
     <published>2019-01-17T12:57:45.000Z</published>
     <updated>2019-05-06T16:08:18.063Z</updated>
     
@@ -83,21 +83,21 @@
     
     </summary>
     
-      <category term="Python" scheme="https://richardrenn.coding.me/categories/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://richardrenn.coding.me/tags/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/tags/Python/"/>
     
-      <category term="数组" scheme="https://richardrenn.coding.me/tags/%E6%95%B0%E7%BB%84/"/>
+      <category term="数组" scheme="https://richardrenn.github.io/tags/%E6%95%B0%E7%BB%84/"/>
     
-      <category term="数组切片" scheme="https://richardrenn.coding.me/tags/%E6%95%B0%E7%BB%84%E5%88%87%E7%89%87/"/>
+      <category term="数组切片" scheme="https://richardrenn.github.io/tags/%E6%95%B0%E7%BB%84%E5%88%87%E7%89%87/"/>
     
   </entry>
   
   <entry>
     <title>Python - 浅拷贝和深拷贝解析</title>
-    <link href="https://richardrenn.coding.me/Python-Copy-Deepcopy.html"/>
-    <id>https://richardrenn.coding.me/Python-Copy-Deepcopy.html</id>
+    <link href="https://richardrenn.github.io/Python-Copy-Deepcopy.html"/>
+    <id>https://richardrenn.github.io/Python-Copy-Deepcopy.html</id>
     <published>2019-01-15T15:09:23.000Z</published>
     <updated>2019-05-06T16:08:22.942Z</updated>
     
@@ -109,19 +109,19 @@
     
     </summary>
     
-      <category term="Python" scheme="https://richardrenn.coding.me/categories/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://richardrenn.coding.me/tags/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/tags/Python/"/>
     
-      <category term="浅拷贝和深拷贝" scheme="https://richardrenn.coding.me/tags/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/"/>
+      <category term="浅拷贝和深拷贝" scheme="https://richardrenn.github.io/tags/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/"/>
     
   </entry>
   
   <entry>
     <title>Python - 装饰器</title>
-    <link href="https://richardrenn.coding.me/Python-Decorator.html"/>
-    <id>https://richardrenn.coding.me/Python-Decorator.html</id>
+    <link href="https://richardrenn.github.io/Python-Decorator.html"/>
+    <id>https://richardrenn.github.io/Python-Decorator.html</id>
     <published>2019-01-12T16:35:47.000Z</published>
     <updated>2019-05-11T16:22:44.746Z</updated>
     
@@ -133,19 +133,19 @@
     
     </summary>
     
-      <category term="Python" scheme="https://richardrenn.coding.me/categories/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://richardrenn.coding.me/tags/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/tags/Python/"/>
     
-      <category term="装饰器" scheme="https://richardrenn.coding.me/tags/%E8%A3%85%E9%A5%B0%E5%99%A8/"/>
+      <category term="装饰器" scheme="https://richardrenn.github.io/tags/%E8%A3%85%E9%A5%B0%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>Python - 闭包</title>
-    <link href="https://richardrenn.coding.me/Python-Closure.html"/>
-    <id>https://richardrenn.coding.me/Python-Closure.html</id>
+    <link href="https://richardrenn.github.io/Python-Closure.html"/>
+    <id>https://richardrenn.github.io/Python-Closure.html</id>
     <published>2019-01-12T16:35:04.000Z</published>
     <updated>2019-05-11T16:22:22.875Z</updated>
     
@@ -157,19 +157,19 @@
     
     </summary>
     
-      <category term="Python" scheme="https://richardrenn.coding.me/categories/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://richardrenn.coding.me/tags/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/tags/Python/"/>
     
-      <category term="闭包" scheme="https://richardrenn.coding.me/tags/%E9%97%AD%E5%8C%85/"/>
+      <category term="闭包" scheme="https://richardrenn.github.io/tags/%E9%97%AD%E5%8C%85/"/>
     
   </entry>
   
   <entry>
     <title>Python - 函数作用域</title>
-    <link href="https://richardrenn.coding.me/Python-Function-Scope.html"/>
-    <id>https://richardrenn.coding.me/Python-Function-Scope.html</id>
+    <link href="https://richardrenn.github.io/Python-Function-Scope.html"/>
+    <id>https://richardrenn.github.io/Python-Function-Scope.html</id>
     <published>2019-01-12T16:34:21.000Z</published>
     <updated>2019-05-06T16:08:19.781Z</updated>
     
@@ -181,19 +181,19 @@
     
     </summary>
     
-      <category term="Python" scheme="https://richardrenn.coding.me/categories/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://richardrenn.coding.me/tags/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/tags/Python/"/>
     
-      <category term="函数作用域" scheme="https://richardrenn.coding.me/tags/%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+      <category term="函数作用域" scheme="https://richardrenn.github.io/tags/%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
     
   </entry>
   
   <entry>
     <title>Linux开机启动项目录rc.d</title>
-    <link href="https://richardrenn.coding.me/Linux-Msconfig.html"/>
-    <id>https://richardrenn.coding.me/Linux-Msconfig.html</id>
+    <link href="https://richardrenn.github.io/Linux-Msconfig.html"/>
+    <id>https://richardrenn.github.io/Linux-Msconfig.html</id>
     <published>2018-12-26T09:25:35.000Z</published>
     <updated>2019-05-06T16:08:26.200Z</updated>
     
@@ -205,17 +205,17 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://richardrenn.coding.me/categories/Linux/"/>
+      <category term="Linux" scheme="https://richardrenn.github.io/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="https://richardrenn.coding.me/tags/Linux/"/>
+      <category term="Linux" scheme="https://richardrenn.github.io/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>服务器配置 - Redis单机多实例配置</title>
-    <link href="https://richardrenn.coding.me/Server-Redis-Multi-Instance.html"/>
-    <id>https://richardrenn.coding.me/Server-Redis-Multi-Instance.html</id>
+    <link href="https://richardrenn.github.io/Server-Redis-Multi-Instance.html"/>
+    <id>https://richardrenn.github.io/Server-Redis-Multi-Instance.html</id>
     <published>2018-12-26T08:35:50.000Z</published>
     <updated>2019-05-11T16:24:44.713Z</updated>
     
@@ -227,21 +227,21 @@
     
     </summary>
     
-      <category term="服务器搭建" scheme="https://richardrenn.coding.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"/>
+      <category term="服务器搭建" scheme="https://richardrenn.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Linux" scheme="https://richardrenn.coding.me/tags/Linux/"/>
+      <category term="Linux" scheme="https://richardrenn.github.io/tags/Linux/"/>
     
-      <category term="服务器" scheme="https://richardrenn.coding.me/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="服务器" scheme="https://richardrenn.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-      <category term="Redis" scheme="https://richardrenn.coding.me/tags/Redis/"/>
+      <category term="Redis" scheme="https://richardrenn.github.io/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>Python - Supervisor安装配置</title>
-    <link href="https://richardrenn.coding.me/Server-Supervisor-Configuration.html"/>
-    <id>https://richardrenn.coding.me/Server-Supervisor-Configuration.html</id>
+    <link href="https://richardrenn.github.io/Server-Supervisor-Configuration.html"/>
+    <id>https://richardrenn.github.io/Server-Supervisor-Configuration.html</id>
     <published>2018-12-22T16:19:22.000Z</published>
     <updated>2019-05-11T16:25:04.326Z</updated>
     
@@ -253,23 +253,23 @@
     
     </summary>
     
-      <category term="Python" scheme="https://richardrenn.coding.me/categories/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://richardrenn.coding.me/tags/Python/"/>
+      <category term="Linux" scheme="https://richardrenn.github.io/tags/Linux/"/>
     
-      <category term="Linux" scheme="https://richardrenn.coding.me/tags/Linux/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/tags/Python/"/>
     
-      <category term="服务器" scheme="https://richardrenn.coding.me/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="服务器" scheme="https://richardrenn.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-      <category term="Supervisor" scheme="https://richardrenn.coding.me/tags/Supervisor/"/>
+      <category term="Supervisor" scheme="https://richardrenn.github.io/tags/Supervisor/"/>
     
   </entry>
   
   <entry>
     <title>Python - Gunicorn安装配置</title>
-    <link href="https://richardrenn.coding.me/Server-Gunicorn-Configuration.html"/>
-    <id>https://richardrenn.coding.me/Server-Gunicorn-Configuration.html</id>
+    <link href="https://richardrenn.github.io/Server-Gunicorn-Configuration.html"/>
+    <id>https://richardrenn.github.io/Server-Gunicorn-Configuration.html</id>
     <published>2018-12-22T15:52:38.000Z</published>
     <updated>2019-05-11T16:24:07.783Z</updated>
     
@@ -281,23 +281,23 @@
     
     </summary>
     
-      <category term="Python" scheme="https://richardrenn.coding.me/categories/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://richardrenn.coding.me/tags/Python/"/>
+      <category term="Linux" scheme="https://richardrenn.github.io/tags/Linux/"/>
     
-      <category term="Linux" scheme="https://richardrenn.coding.me/tags/Linux/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/tags/Python/"/>
     
-      <category term="服务器" scheme="https://richardrenn.coding.me/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="服务器" scheme="https://richardrenn.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-      <category term="Gunicorn" scheme="https://richardrenn.coding.me/tags/Gunicorn/"/>
+      <category term="Gunicorn" scheme="https://richardrenn.github.io/tags/Gunicorn/"/>
     
   </entry>
   
   <entry>
     <title>Python - virtualenv虚拟环境配置</title>
-    <link href="https://richardrenn.coding.me/Python-Virtualenv.html"/>
-    <id>https://richardrenn.coding.me/Python-Virtualenv.html</id>
+    <link href="https://richardrenn.github.io/Python-Virtualenv.html"/>
+    <id>https://richardrenn.github.io/Python-Virtualenv.html</id>
     <published>2018-12-22T15:00:54.000Z</published>
     <updated>2019-05-06T16:08:11.588Z</updated>
     
@@ -309,19 +309,19 @@
     
     </summary>
     
-      <category term="Python" scheme="https://richardrenn.coding.me/categories/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://richardrenn.coding.me/tags/Python/"/>
+      <category term="Python" scheme="https://richardrenn.github.io/tags/Python/"/>
     
-      <category term="virtualenv" scheme="https://richardrenn.coding.me/tags/virtualenv/"/>
+      <category term="virtualenv" scheme="https://richardrenn.github.io/tags/virtualenv/"/>
     
   </entry>
   
   <entry>
     <title>服务器配置 - Nginx安装配置</title>
-    <link href="https://richardrenn.coding.me/Server-Nginx-Configuration.html"/>
-    <id>https://richardrenn.coding.me/Server-Nginx-Configuration.html</id>
+    <link href="https://richardrenn.github.io/Server-Nginx-Configuration.html"/>
+    <id>https://richardrenn.github.io/Server-Nginx-Configuration.html</id>
     <published>2018-12-20T11:58:56.000Z</published>
     <updated>2018-12-22T16:51:32.852Z</updated>
     
@@ -333,21 +333,21 @@
     
     </summary>
     
-      <category term="服务器搭建" scheme="https://richardrenn.coding.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"/>
+      <category term="服务器搭建" scheme="https://richardrenn.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Linux" scheme="https://richardrenn.coding.me/tags/Linux/"/>
+      <category term="Linux" scheme="https://richardrenn.github.io/tags/Linux/"/>
     
-      <category term="服务器" scheme="https://richardrenn.coding.me/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="服务器" scheme="https://richardrenn.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-      <category term="Nginx" scheme="https://richardrenn.coding.me/tags/Nginx/"/>
+      <category term="Nginx" scheme="https://richardrenn.github.io/tags/Nginx/"/>
     
   </entry>
   
   <entry>
     <title>服务器配置 - Redis安装配置</title>
-    <link href="https://richardrenn.coding.me/Server-Redis-Configuration.html"/>
-    <id>https://richardrenn.coding.me/Server-Redis-Configuration.html</id>
+    <link href="https://richardrenn.github.io/Server-Redis-Configuration.html"/>
+    <id>https://richardrenn.github.io/Server-Redis-Configuration.html</id>
     <published>2018-12-20T11:39:11.000Z</published>
     <updated>2019-05-11T16:24:24.150Z</updated>
     
@@ -359,21 +359,21 @@
     
     </summary>
     
-      <category term="服务器搭建" scheme="https://richardrenn.coding.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"/>
+      <category term="服务器搭建" scheme="https://richardrenn.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Linux" scheme="https://richardrenn.coding.me/tags/Linux/"/>
+      <category term="Linux" scheme="https://richardrenn.github.io/tags/Linux/"/>
     
-      <category term="服务器" scheme="https://richardrenn.coding.me/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="服务器" scheme="https://richardrenn.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-      <category term="Redis" scheme="https://richardrenn.coding.me/tags/Redis/"/>
+      <category term="Redis" scheme="https://richardrenn.github.io/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>GitHub教程 - Git安装配置</title>
-    <link href="https://richardrenn.coding.me/Git-Configuration.html"/>
-    <id>https://richardrenn.coding.me/Git-Configuration.html</id>
+    <link href="https://richardrenn.github.io/Git-Configuration.html"/>
+    <id>https://richardrenn.github.io/Git-Configuration.html</id>
     <published>2018-12-20T11:09:54.000Z</published>
     <updated>2019-05-11T16:21:18.649Z</updated>
     
@@ -385,19 +385,19 @@
     
     </summary>
     
-      <category term="GitHub教程" scheme="https://richardrenn.coding.me/categories/GitHub%E6%95%99%E7%A8%8B/"/>
+      <category term="GitHub教程" scheme="https://richardrenn.github.io/categories/GitHub%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Git" scheme="https://richardrenn.coding.me/tags/Git/"/>
+      <category term="Git" scheme="https://richardrenn.github.io/tags/Git/"/>
     
-      <category term="GitHub" scheme="https://richardrenn.coding.me/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://richardrenn.github.io/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>服务器搭建 - 为服务器添加ssh公钥验证</title>
-    <link href="https://richardrenn.coding.me/Server-SSH-Key.html"/>
-    <id>https://richardrenn.coding.me/Server-SSH-Key.html</id>
+    <link href="https://richardrenn.github.io/Server-SSH-Key.html"/>
+    <id>https://richardrenn.github.io/Server-SSH-Key.html</id>
     <published>2018-12-20T09:51:00.000Z</published>
     <updated>2019-05-11T16:26:20.842Z</updated>
     
@@ -409,19 +409,19 @@
     
     </summary>
     
-      <category term="服务器搭建" scheme="https://richardrenn.coding.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"/>
+      <category term="服务器搭建" scheme="https://richardrenn.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Linux" scheme="https://richardrenn.coding.me/tags/Linux/"/>
+      <category term="Linux" scheme="https://richardrenn.github.io/tags/Linux/"/>
     
-      <category term="ssh" scheme="https://richardrenn.coding.me/tags/ssh/"/>
+      <category term="ssh" scheme="https://richardrenn.github.io/tags/ssh/"/>
     
   </entry>
   
   <entry>
     <title>服务器配置 - Nginx+Gunicorn+Supervisor+Flask</title>
-    <link href="https://richardrenn.coding.me/Server-Configuration.html"/>
-    <id>https://richardrenn.coding.me/Server-Configuration.html</id>
+    <link href="https://richardrenn.github.io/Server-Configuration.html"/>
+    <id>https://richardrenn.github.io/Server-Configuration.html</id>
     <published>2018-12-20T08:47:24.000Z</published>
     <updated>2019-05-06T16:08:03.300Z</updated>
     
@@ -433,19 +433,19 @@
     
     </summary>
     
-      <category term="服务器搭建" scheme="https://richardrenn.coding.me/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"/>
+      <category term="服务器搭建" scheme="https://richardrenn.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Linux" scheme="https://richardrenn.coding.me/tags/Linux/"/>
+      <category term="Linux" scheme="https://richardrenn.github.io/tags/Linux/"/>
     
-      <category term="服务器" scheme="https://richardrenn.coding.me/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="服务器" scheme="https://richardrenn.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>GitHub教程 - 分支工作流程</title>
-    <link href="https://richardrenn.coding.me/GitHub-Branch-Workflow.html"/>
-    <id>https://richardrenn.coding.me/GitHub-Branch-Workflow.html</id>
+    <link href="https://richardrenn.github.io/GitHub-Branch-Workflow.html"/>
+    <id>https://richardrenn.github.io/GitHub-Branch-Workflow.html</id>
     <published>2018-12-18T15:28:03.000Z</published>
     <updated>2019-05-11T16:21:12.056Z</updated>
     
@@ -457,19 +457,19 @@
     
     </summary>
     
-      <category term="GitHub教程" scheme="https://richardrenn.coding.me/categories/GitHub%E6%95%99%E7%A8%8B/"/>
+      <category term="GitHub教程" scheme="https://richardrenn.github.io/categories/GitHub%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Git" scheme="https://richardrenn.coding.me/tags/Git/"/>
+      <category term="Git" scheme="https://richardrenn.github.io/tags/Git/"/>
     
-      <category term="GitHub" scheme="https://richardrenn.coding.me/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://richardrenn.github.io/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>GitHub教程 - Pull Request 工作流程</title>
-    <link href="https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html"/>
-    <id>https://richardrenn.coding.me/GitHub-Pull-Request-Workflow.html</id>
+    <link href="https://richardrenn.github.io/GitHub-Pull-Request-Workflow.html"/>
+    <id>https://richardrenn.github.io/GitHub-Pull-Request-Workflow.html</id>
     <published>2018-12-18T12:27:28.000Z</published>
     <updated>2019-05-11T16:21:59.718Z</updated>
     
@@ -481,19 +481,19 @@
     
     </summary>
     
-      <category term="GitHub教程" scheme="https://richardrenn.coding.me/categories/GitHub%E6%95%99%E7%A8%8B/"/>
+      <category term="GitHub教程" scheme="https://richardrenn.github.io/categories/GitHub%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Git" scheme="https://richardrenn.coding.me/tags/Git/"/>
+      <category term="Git" scheme="https://richardrenn.github.io/tags/Git/"/>
     
-      <category term="GitHub" scheme="https://richardrenn.coding.me/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://richardrenn.github.io/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://richardrenn.coding.me/hello-world.html"/>
-    <id>https://richardrenn.coding.me/hello-world.html</id>
+    <link href="https://richardrenn.github.io/hello-world.html"/>
+    <id>https://richardrenn.github.io/hello-world.html</id>
     <published>2018-12-15T06:25:47.493Z</published>
     <updated>2018-12-20T14:37:50.018Z</updated>
     
