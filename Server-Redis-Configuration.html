@@ -15,7 +15,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -268,7 +268,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">20</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">22</span></a>
 
   </li>
         
@@ -306,7 +306,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">20</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">21</span></a>
 
   </li>
         
@@ -541,7 +541,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">659</span>
+                <span title="本文字数">666</span>
               
 
               
@@ -578,20 +578,27 @@
 
       
         <h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install redis-server</span><br></pre></td></tr></table></figure>
+
 <h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/redis/redis.conf</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>这里仅介绍几个基本配置</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 端口</span><br><span class="line">port 6379</span><br><span class="line"></span><br><span class="line"># pid文件路径</span><br><span class="line">pidfile /var/run/redis/redis-server.pid</span><br><span class="line"></span><br><span class="line"># 绑定ip</span><br><span class="line">bind 139.xxx.xxx.xxx 127.0.0.1</span><br><span class="line"></span><br><span class="line"># 登录需要密码</span><br><span class="line">requirepass 123456</span><br><span class="line"></span><br><span class="line"># log文件路径</span><br><span class="line">logfile /var/log/redis/redis-server.log</span><br><span class="line"></span><br><span class="line"># 持久化输出的数据库文件</span><br><span class="line">dbfilename dump.rdb</span><br><span class="line"></span><br><span class="line"># 只增文件的文件名称</span><br><span class="line">appendfilename &quot;appendonly.aof&quot;</span><br></pre></td></tr></table></figure>
+
 <h2 id="3-重启"><a href="#3-重启" class="headerlink" title="3.重启"></a>3.重启</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/redis-server restart</span><br></pre></td></tr></table></figure>
+
 <p>这一步做完redis-server已经可以正常工作了。</p>
 <hr>
 <h2 id="4-常用命令"><a href="#4-常用命令" class="headerlink" title="4.常用命令"></a>4.常用命令</h2><h4 id="4-1-连接"><a href="#4-1-连接" class="headerlink" title="4.1.连接"></a>4.1.连接</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli -h 139.xxx.xxx.xxx -p 6379 -a 123456</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>如果是本地连接的话-h参数可以省略<br>使用默认端口6379的话-p参数可以省略<br>没有设置密码的话-a参数可以省略</p>
 </blockquote>
 <h4 id="4-2-关闭"><a href="#4-2-关闭" class="headerlink" title="4.2.关闭"></a>4.2.关闭</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli shutdown</span><br></pre></td></tr></table></figure>
+
 <h4 id="4-2-启动服务器"><a href="#4-2-启动服务器" class="headerlink" title="4.2.启动服务器"></a>4.2.启动服务器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server</span><br></pre></td></tr></table></figure>
+
 <hr>
 <ul>
 <li>在一台机器上配置多个Redis服务器可以参考<a href="/Server-Redis-Multi-Instance.html">&gt;&gt;传送门 - Redis单机多实例配置&lt;&lt;</a>。</li>
@@ -896,7 +903,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">23k</span>
   
 
   
@@ -905,7 +912,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">47 分钟</span>
+    <span title="站点阅读时长">48 分钟</span>
   
 </div>
 

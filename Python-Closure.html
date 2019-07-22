@@ -15,7 +15,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -268,7 +268,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">20</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">22</span></a>
 
   </li>
         
@@ -306,7 +306,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">20</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">21</span></a>
 
   </li>
         
@@ -587,7 +587,9 @@
 <p>首先要理解python中的函数也是一个对象，它是有属性和返回值的，而在函数执行完后其内部变量会被解释器回收。</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># G</span></span><br><span class="line">pass_line = <span class="number">60</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(score)</span>:</span></span><br><span class="line">    <span class="comment"># E</span></span><br><span class="line">    print(<span class="string">"%x"</span> % id(score)) <span class="comment"># 以16进制打印score的id值</span></span><br><span class="line">    pass_line = <span class="number">90</span></span><br><span class="line">    result = <span class="string">"yes"</span> <span class="keyword">if</span> score &gt;= pass_line <span class="keyword">else</span> <span class="string">"no"</span></span><br><span class="line">    print(result)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner_func</span><span class="params">()</span>:</span>  <span class="comment"># score在E作用域中，inner_func就是个闭包, 有__closure__属性</span></span><br><span class="line">        <span class="comment"># L</span></span><br><span class="line">        print(score)</span><br><span class="line">    print(inner_func.__closure__)</span><br><span class="line">    <span class="keyword">return</span> inner_func</span><br><span class="line"></span><br><span class="line">f = func(<span class="number">80</span>) <span class="comment"># 语句1 func()返回了一个函数对象inner_func</span></span><br><span class="line">f() <span class="comment"># 语句2 此时f即inner_func</span></span><br><span class="line">print(f.__closure__)</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">运行结果：</span><br><span class="line">6e7e6ac0</span><br><span class="line">no</span><br><span class="line">(&lt;cell at 0x000001FC0B9AB6A8: int object at 0x000000006E7E6AC0&gt;,)</span><br><span class="line">80</span><br><span class="line">(&lt;cell at 0x0000019CDFBDB6A8: int object at 0x000000006E7E6AC0&gt;,)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>两个本来语句1运行完之后，func内部的变量都已经被回收了，那么这个 80为什么还可以被语句2打印出来呢？<br>注意下这个现象f.__closure__这个元组的第一个元素的id和score变量的id值相同。<br>说明如果内部函数中对enclosing作用域中的变量进行引用之后，这个变量就会被添加到inner_func的__closure__属性这个元组中，这样因为有了这个添加到元组的引用，score变量就不会被回收了，再调用f函数时，就会在它的__closure__属性中查找score变量，这样就自然而然的可以引用了。</p>
 </blockquote>
@@ -597,16 +599,21 @@
 <p>下面的代码就是应用闭包达到了自定pass_line的目的</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(pass_line)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner_func</span><span class="params">(score)</span>:</span>  <span class="comment"># score在E作用域中，inner_func就是个闭包, 有__closure__属性</span></span><br><span class="line">        result = <span class="string">"yes"</span> <span class="keyword">if</span> score &gt;= pass_line <span class="keyword">else</span> <span class="string">"no"</span>  <span class="comment"># 此时引用了enclosing作用域中的pass_line，那么pass_line变量就被添加到了__closure__属性中</span></span><br><span class="line">        print(result)</span><br><span class="line">    <span class="keyword">return</span> inner_func</span><br><span class="line"></span><br><span class="line">f = func(<span class="number">90</span>)  <span class="comment"># 语句1 func()返回了一个函数对象inner_func</span></span><br><span class="line">f(<span class="number">80</span>)  <span class="comment"># 语句2 此时f即inner_func</span></span><br><span class="line"></span><br><span class="line">f2 = func(<span class="number">60</span>)</span><br><span class="line">f2(<span class="number">80</span>)</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="literal">no</span></span><br><span class="line"><span class="literal">yes</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="4-经典错误代码"><a href="#4-经典错误代码" class="headerlink" title="4.经典错误代码"></a>4.经典错误代码</h2><blockquote>
 <p>参考<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vSm9obkFCQy9wLzQwNzY4NTUuaHRtbA==" title="https://www.cnblogs.com/JohnABC/p/4076855.html">&gt;&gt;传送门 - 闭包经典错误代码&lt;&lt;<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">()</span>:</span></span><br><span class="line">        a = a + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    <span class="keyword">return</span> bar</span><br><span class="line"></span><br><span class="line">c = foo()</span><br><span class="line">c()</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">会报错如下：</span><br><span class="line">local variable &apos;a&apos; referenced before assignment</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>这是因为在执行代码 c = foo()时，python会导入全部的闭包函数体bar()来分析其的局部变量，<br>python规则指定所有在赋值语句左面的变量都是局部变量，<br>则在闭包bar()中，变量a在赋值符号”=”的左面，被python认为是bar()中的局部变量。<br>再接下来执行print c()时，程序运行至a = a + 1时，因为先前已经把a归为bar()中的局部变量，<br>所以python会在bar()中去找在赋值语句右面的a的值，结果找不到，就会报错。解决的方法很简单:</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    a = [<span class="number">1</span>]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">()</span>:</span></span><br><span class="line">        a[<span class="number">0</span>] = a[<span class="number">0</span>] + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> a[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> bar</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>只要将a设定为一个容器就可以了。这样使用起来多少有点不爽，<br>所以在python3以后，在a = a + 1 之前，使用语句nonloacal a就可以了，该语句显式的指定a不是闭包的局部变量。</p>
 </blockquote>
@@ -908,7 +915,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">23k</span>
   
 
   
@@ -917,7 +924,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">47 分钟</span>
+    <span title="站点阅读时长">48 分钟</span>
   
 </div>
 

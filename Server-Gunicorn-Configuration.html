@@ -15,7 +15,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -268,7 +268,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">20</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">22</span></a>
 
   </li>
         
@@ -306,7 +306,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">20</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">21</span></a>
 
   </li>
         
@@ -541,7 +541,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">483</span>
+                <span title="本文字数">487</span>
               
 
               
@@ -578,7 +578,9 @@
 
       
         <h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/www/happy <span class="comment"># 进入项目代码目录</span></span><br><span class="line"><span class="built_in">source</span> venv/bin/activate <span class="comment"># 激活并进入虚拟环境</span></span><br><span class="line">pip install gunicorn <span class="comment"># 在虚拟环境中安装gunicorn</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="2-使用gunicorn启动Flask项目"><a href="#2-使用gunicorn启动Flask项目" class="headerlink" title="2.使用gunicorn启动Flask项目"></a>2.使用gunicorn启动Flask项目</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gunicorn -w4 -b127.0.0.1:8003 happy:app</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>这里的happy是Flask项目的app名<br>-w4 等同于 –workers=4，意为同时启动四个worker<br>-b127.0.0.1:8003 等同于 –bind=127.0.0.1:8003，用于指定绑定的服务器ip和端口</p>
 </blockquote>
@@ -589,10 +591,12 @@
 <p>后台进程可以使用以下命令查看进程号(pid):</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep gunicorn</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>关闭进程命令：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> [pid]</span><br></pre></td></tr></table></figure>
+
 <hr>
 <ul>
 <li>推荐使用supervisor来管理gunicorn进程，优点是启动、停止、重启都很方便，并且支持自动重启被意外停止的进程，可以参考<a href="/Server-Supervisor-Configuration.html">&gt;&gt;传送门 - Supervisor安装配置&lt;&lt;</a>。</li>
@@ -899,7 +903,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">23k</span>
   
 
   
@@ -908,7 +912,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">47 分钟</span>
+    <span title="站点阅读时长">48 分钟</span>
   
 </div>
 

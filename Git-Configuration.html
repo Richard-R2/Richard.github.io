@@ -15,7 +15,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -270,7 +270,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">20</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">22</span></a>
 
   </li>
         
@@ -308,7 +308,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">20</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">21</span></a>
 
   </li>
         
@@ -580,29 +580,37 @@
 
       
         <h2 id="1-环境变量"><a href="#1-环境变量" class="headerlink" title="*1.环境变量"></a>*1.环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>在后面添加以下内容,以解决某些包(如perl、git)安装时的warning</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LC_ALL=<span class="string">"C"</span></span><br><span class="line"><span class="built_in">export</span> LANGUAGE=<span class="string">"zh_CN:zh"</span></span><br></pre></td></tr></table></figure>
+
 <p>当然也可以直接在命令终端中export临时设置环境变量</p>
 <h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2.安装"></a>2.安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get install git <span class="comment"># 这是Ubuntu下的命令</span></span><br><span class="line">yum install git <span class="comment"># 这是CentOS下的命令</span></span><br><span class="line">brew install git <span class="comment"># 这是MAC下的命令</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="3-生成ssh密钥对"><a href="#3-生成ssh密钥对" class="headerlink" title="3.生成ssh密钥对"></a>3.生成ssh密钥对</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></table></figure>
+
 <p>如果不想设置密码的话直接三次回车即可，和git生成密钥的命令相同。</p>
 <blockquote>
 <p>生成的密钥对位置在 ~/.ssh，查看下公钥，后面要用到。</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>内容类似下面这样</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+am2s/r1n+xsipi/4H2ll8p3McdhQCLBwJGNbkaxpeWKtdbiUbqAWjHS436eNt/OF13VsyWLs5lb6J2I3J6GlCcEGMGOFc4gzLTP9e/TmXeyFlBMZkuSJTbsXvL9Q/tff/8Tgt4aVwR3OWlwfvPdtoyR0tGhDDQn8a0gzs04mPyMWjK6akt/zGCQ70Eo6stVMGCyMAL/PrHwdZ/puXjtw0T9HSs/ON/Jub+h3oKfgJVhpJNbIDR2r08LoEA0roTplI4aSR+JgnSKsXhIvTAUm+VRmWgz3oPYcNkaGkvBvA1gfk/baB6qxv0hkjPwtY5GIRkCU6cIcjG3U1LR6pnH+8Z0RbN9YaFFNRRf4rMnZ3n0jhYXCq7dzBoofLWRVlAqTlybF7xz9JNVQxiC+o5skBHJ/Eb7Ggtejc6TVW+FJaNUy5+yWqfhq57kC4zq+5HhAY9ToKZpYLKjJa7oG0eHAeOAgSd2jdDEvALegap4nrMHVLP8sOQlNFBMPjy1r0cW/Afp32gCtPOpQRuIkQdOnWUkzjObGTLaVffanhYnX470UNsvgQ+IyikhS5tiKPqkT317v6yFV4doeZgfNYtcgpLVZcVxkItTLS1h75d4h4MD2JVRk2nBGSLp5j2WIji4Tiy++LblV1Y5Y2wRcfefdXCIMT3jMNAcyhuCaNfaD/Q== your_email@example.com</span><br></pre></td></tr></table></figure>
+
 <h2 id="4-公钥添加到GitHub"><a href="#4-公钥添加到GitHub" class="headerlink" title="4.公钥添加到GitHub"></a>4.公钥添加到GitHub</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3NldHRpbmdzL3NzaC9uZXc=" title="https://github.com/settings/ssh/new">&gt;&gt;传送门 - 添加你自己的公钥&lt;&lt;<i class="fa fa-external-link"></i></span></p>
 <blockquote>
 <p>将上一步的公钥拷贝下来，粘贴至GitHub网页以下位置</p>
 </blockquote>
 <p><img src="/images/Git-Configuration/paste-pub-key.png" alt="paste-pub-key"></p>
 <h2 id="5-配置用户名和邮箱"><a href="#5-配置用户名和邮箱" class="headerlink" title="5.配置用户名和邮箱"></a>5.配置用户名和邮箱</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"your_name"</span></span><br><span class="line">git config --global user.email <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="6-克隆代码"><a href="#6-克隆代码" class="headerlink" title="6.克隆代码"></a>6.克隆代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:user_name/project_name.git /path/to/your/sourcecode</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -901,7 +909,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">23k</span>
   
 
   
@@ -910,7 +918,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">47 分钟</span>
+    <span title="站点阅读时长">48 分钟</span>
   
 </div>
 

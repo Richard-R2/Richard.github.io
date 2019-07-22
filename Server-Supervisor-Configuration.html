@@ -15,7 +15,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -268,7 +268,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">20</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">22</span></a>
 
   </li>
         
@@ -306,7 +306,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">20</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">21</span></a>
 
   </li>
         
@@ -578,20 +578,26 @@
 
       
         <h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install supervisor</span><br></pre></td></tr></table></figure>
+
 <h2 id="2-初始化启动配置文件"><a href="#2-初始化启动配置文件" class="headerlink" title="2.初始化启动配置文件"></a>2.初始化启动配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo_supervisord_conf &gt; /etc/supervisord.conf</span><br><span class="line">vim /etc/supervisord.conf</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>最后面加上下面这两行内容，这样就可以从/etc/supervisor目录下自动加载所有的conf文件了。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[include]</span><br><span class="line">files = /etc/supervisor/*.conf</span><br></pre></td></tr></table></figure>
+
 <h2 id="3-新建项目配置文件"><a href="#3-新建项目配置文件" class="headerlink" title="3.新建项目配置文件"></a>3.新建项目配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/<span class="built_in">log</span>/supervisor</span><br><span class="line">mkdir /etc/supervisor</span><br><span class="line">vim /etc/supervisor/happydev.conf</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>内容如下：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[program:happydev]</span><br><span class="line">directory = /var/www/happydev ;</span><br><span class="line">command = /var/www/happydev/venv/bin/gunicorn -w4 -b127.0.0.1:8003 --timeout 120  happy:app ;</span><br><span class="line">autostart = true ;</span><br><span class="line">startsecs = 5 ;</span><br><span class="line">autorestart = true ;</span><br><span class="line">startretries = 3 ;</span><br><span class="line">user = root ;</span><br><span class="line">redirect_stderr = true ;</span><br><span class="line">stdout_logfile_maxbytes = 100MB ;</span><br><span class="line">stdout_logfile_backups = 10 ;</span><br><span class="line">stdout_logfile = /var/log/supervisor/happydev.log ;</span><br><span class="line">environment = HAPPY_CONFIG_FILE=&quot;/var/www/happydev/happy/config/staging.py&quot;,HAPPY_PATH=&quot;/var/www/happydev&quot; ;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>这里管理的进程是使用gunicorn启动的Flask项目，关于gunicorn的使用可以参考<a href="/Server-Gunicorn-Configuration.html">&gt;&gt;传送门 - Gunicorn安装配置&lt;&lt;</a>。</p>
 </blockquote>
 <h2 id="4-启动suprervisord"><a href="#4-启动suprervisord" class="headerlink" title="4.启动suprervisord"></a>4.启动suprervisord</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">supervisord -c /etc/supervisord.conf</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>到这一步supervisor已经正常工作了。</p>
 </blockquote>
@@ -600,18 +606,25 @@
 <p>查看supervisord进程号(pid)：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep supervisord</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>关闭进程：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> [pid]</span><br></pre></td></tr></table></figure>
+
 <h4 id="5-2-启动单个项目进程"><a href="#5-2-启动单个项目进程" class="headerlink" title="5.2.启动单个项目进程"></a>5.2.启动单个项目进程</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl start happydev</span><br></pre></td></tr></table></figure>
+
 <h4 id="5-3-停止单个项目进程"><a href="#5-3-停止单个项目进程" class="headerlink" title="5.3.停止单个项目进程"></a>5.3.停止单个项目进程</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl stop happydev</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>注意：使用此命令停止的进程不会被自动重启机制重新启动</p>
 </blockquote>
 <h4 id="5-4-重启单个项目进程"><a href="#5-4-重启单个项目进程" class="headerlink" title="5.4.重启单个项目进程"></a>5.4.重启单个项目进程</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl restart happydev</span><br></pre></td></tr></table></figure>
+
 <h4 id="5-5-重新加载单个项目"><a href="#5-5-重新加载单个项目" class="headerlink" title="5.5.重新加载单个项目"></a>5.5.重新加载单个项目</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl remove happydev <span class="comment"># 移除happydev项目</span></span><br><span class="line">supervisorctl reread <span class="comment"># 重新读取所有配置文件</span></span><br><span class="line">supervisorctl add happydev <span class="comment"># 添加happydev项目</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="5-6-查看所有项目进程的运行状态"><a href="#5-6-查看所有项目进程的运行状态" class="headerlink" title="5.6.查看所有项目进程的运行状态"></a>5.6.查看所有项目进程的运行状态</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl status</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -914,7 +927,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">23k</span>
   
 
   
@@ -923,7 +936,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">47 分钟</span>
+    <span title="站点阅读时长">48 分钟</span>
   
 </div>
 

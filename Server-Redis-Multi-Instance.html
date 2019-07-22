@@ -15,7 +15,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -268,7 +268,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">20</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">22</span></a>
 
   </li>
         
@@ -306,7 +306,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">20</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">21</span></a>
 
   </li>
         
@@ -581,40 +581,52 @@
 <p>可以参考<a href="/Server-Redis-Configuration.html">&gt;&gt;传送门 - Redis安装配置&lt;&lt;</a>。<br>Redis安装时会生成一份默认配置/etc/redis/redis.conf，几个常用配置项如下：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/redis/redis.conf</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 端口</span><br><span class="line">port 6379</span><br><span class="line"></span><br><span class="line"># pid文件路径</span><br><span class="line">pidfile /var/run/redis/redis-server.pid</span><br><span class="line"></span><br><span class="line"># 绑定ip</span><br><span class="line">bind 139.xxx.xxx.xxx 127.0.0.1</span><br><span class="line"></span><br><span class="line"># 登录需要密码</span><br><span class="line">requirepass 123456</span><br><span class="line"></span><br><span class="line"># log文件路径</span><br><span class="line">logfile /var/log/redis/redis-server.log</span><br><span class="line"></span><br><span class="line"># 持久化输出的数据库文件</span><br><span class="line">dbfilename dump.rdb</span><br><span class="line"></span><br><span class="line"># 只增文件的文件名称</span><br><span class="line">appendfilename &quot;appendonly.aof&quot;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>将配置文件拷贝一份，并修改下内容：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/redis/redis.conf /etc/redis/redis-2.conf</span><br><span class="line">vim /etc/redis/redis-2.conf</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 端口</span><br><span class="line">port 6789</span><br><span class="line"></span><br><span class="line"># pid文件路径</span><br><span class="line">pidfile /var/run/redis/redis-2.pid</span><br><span class="line"></span><br><span class="line"># 绑定ip</span><br><span class="line">bind 139.xxx.xxx.xxx 127.0.0.1</span><br><span class="line"></span><br><span class="line"># 登录需要密码</span><br><span class="line">requirepass 123456</span><br><span class="line"></span><br><span class="line"># log文件路径</span><br><span class="line">logfile /var/log/redis/redis-2.log</span><br><span class="line"></span><br><span class="line"># 持久化输出的数据库文件</span><br><span class="line">dbfilename dump-2.rdb</span><br><span class="line"></span><br><span class="line"># 只增文件的文件名称</span><br><span class="line">appendfilename &quot;appendonly-2.aof&quot;</span><br></pre></td></tr></table></figure>
+
 <h2 id="2-手动启动"><a href="#2-手动启动" class="headerlink" title="2.手动启动"></a>2.手动启动</h2><blockquote>
 <p>从不同的配置文件启动Redis实例</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">redis-server  /etc/redis/redis.conf</span><br><span class="line">redis-server  /etc/redis/redis-2.conf</span><br></pre></td></tr></table></figure>
+
 <p>到这里两个实例都可以正常工作了。</p>
 <hr>
 <h2 id="3-主从配置"><a href="#3-主从配置" class="headerlink" title="*3.主从配置"></a>*3.主从配置</h2><blockquote>
 <p>一些场景下需要配置Redis主从数据库，如读写分离。<br>Redis的主从配置还是很容易的，只要修改下从库的配置文件的slaveof项即可。</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/redis/redis-2.conf</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 从属关系，如果是在同一台机器上可以把ip设置为127.0.0.1</span><br><span class="line">slaveof  139.xxx.xxx.xxx  6379</span><br></pre></td></tr></table></figure>
+
 <h2 id="4-设置开机启动"><a href="#4-设置开机启动" class="headerlink" title="*4.设置开机启动"></a>*4.设置开机启动</h2><blockquote>
 <p>默认情况下只有第一个实例会开机启动，其他的实例需要手动启动，下面将讲解如何让第二个实例也开机启动。</p>
 </blockquote>
 <h4 id="4-1-先拷贝一份原来的启动脚本"><a href="#4-1-先拷贝一份原来的启动脚本" class="headerlink" title="4.1.先拷贝一份原来的启动脚本"></a>4.1.先拷贝一份原来的启动脚本</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/init.d/redis-server /etc/init.d/redis-server-2</span><br></pre></td></tr></table></figure>
+
 <h4 id="4-2-修改新的启动脚本"><a href="#4-2-修改新的启动脚本" class="headerlink" title="4.2.修改新的启动脚本"></a>4.2.修改新的启动脚本</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/init.d/redis-server-2</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>前几行需要修改的内容如下：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin</span><br><span class="line">DAEMON=/usr/bin/redis-server</span><br><span class="line">DAEMON_ARGS=/etc/redis/redis-2.conf</span><br><span class="line">NAME=redis-server-2</span><br><span class="line">DESC=redis-server-2</span><br><span class="line"></span><br><span class="line">RUNDIR=/var/run/redis</span><br><span class="line">PIDFILE=$RUNDIR/redis-server-2.pid</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>*以后就可以使用下面的命令来启动/停止新的实例了</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/redis-server-2 start <span class="comment"># 启动</span></span><br><span class="line">/etc/init.d/redis-server-2 stop <span class="comment"># 停止</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="4-3-将新脚本加入开机启动项"><a href="#4-3-将新脚本加入开机启动项" class="headerlink" title="4.3.将新脚本加入开机启动项"></a>4.3.将新脚本加入开机启动项</h4><blockquote>
 <p>方法一：使用update-rc.d命令，20是想要指定的启动序号。</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update-rc.d -f redis-server-2 defaults 20</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>方法二：手动添加开机启动项，可以参考这篇文章<a href="/Linux-Msconfig.html">&gt;&gt;传送门 - Linux设置开机启动项&lt;&lt;</a>，两个方法的结果是相同的。</p>
 </blockquote>
@@ -622,6 +634,7 @@
 <p>配置完成，此时敲reboot重启机器就可以实现开机自动启动这两个实例了。</p>
 </blockquote>
 <h4 id="4-4-取消开机启动"><a href="#4-4-取消开机启动" class="headerlink" title="*4.4.取消开机启动"></a>*4.4.取消开机启动</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update-rc.d -f redis-server-2 remove</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -922,7 +935,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">23k</span>
   
 
   
@@ -931,7 +944,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">47 分钟</span>
+    <span title="站点阅读时长">48 分钟</span>
   
 </div>
 

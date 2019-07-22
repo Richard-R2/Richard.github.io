@@ -15,7 +15,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -268,7 +268,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">20</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">22</span></a>
 
   </li>
         
@@ -306,7 +306,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">20</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">21</span></a>
 
   </li>
         
@@ -582,35 +582,44 @@
 <p>/etc/init.d目录下是所有的启动脚本，我们可以通过以下命令来运行。</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/脚本名 参数</span><br></pre></td></tr></table></figure>
+
 <h2 id="1-先查看下自己的开机启动级别"><a href="#1-先查看下自己的开机启动级别" class="headerlink" title="1.先查看下自己的开机启动级别"></a>1.先查看下自己的开机启动级别</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Runlevel</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>显示   N  2<br>则当前的级别是2级,那么所有开机启动项就是在/etc/rc2.d目录下。</p>
 </blockquote>
 <h2 id="2-查看下原来的redis启动序号"><a href="#2-查看下原来的redis启动序号" class="headerlink" title="2.查看下原来的redis启动序号"></a>2.查看下原来的redis启动序号</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l /etc/rc2.d</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>这个目录下都是软链接（符号链接），链接到/etc/init.d目录。<br>显示格式如下：S/K + 序号 + 脚本名</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lrwxrwxrwx 1 root root  22 Dec  2 15:37 S20redis-server -&gt; ../init.d/redis-server</span><br><span class="line">lrwxrwxrwx 1 root root  18 Aug 24  2017 S99rc.local -&gt; ../init.d/rc.local</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>启动序号是20<br>S开头是开机时的脚本启动顺序，按序号从小到大启动。<br>K开头表示是关机时的脚本关闭顺序，按序号从大到小关闭。</p>
 </blockquote>
 <h2 id="3-将启动脚本软链接到开机启动目录下"><a href="#3-将启动脚本软链接到开机启动目录下" class="headerlink" title="3.将启动脚本软链接到开机启动目录下"></a>3.将启动脚本软链接到开机启动目录下</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /etc/init.d/redis-server-2 /etc/rc2.d/S20redis-server-2</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>注意：如果两个redis有主从关系的话即需要有先后启动顺序，就需要适当的增大序号，如21</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /etc/init.d/redis-server-2 /etc/rc2.d/S21redis-server-2</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>*也可以使用update-rc.d命令，效果相同：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update-rc.d -f redis-server-2 defaults 20</span><br></pre></td></tr></table></figure>
+
 <h2 id="4-取消开机启动"><a href="#4-取消开机启动" class="headerlink" title="4.取消开机启动"></a>4.取消开机启动</h2><blockquote>
 <p>方法一：使用update-rc.d命令</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update-rc.d -f redis-server-slark remove</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>方法二：直接删除软链接</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -f /etc/rc2.d/S20redis-server-slark</span><br></pre></td></tr></table></figure>
+
 <h2 id="5-关于rc-local"><a href="#5-关于rc-local" class="headerlink" title="5.关于rc.local"></a>5.关于rc.local</h2><blockquote>
 <p>rc.local也是开机启动脚本，从ls -l /etc/rc2.d 命令的输出结果也可以看出，它的启动序号是99。<br>所以rc.local里的内容是在所有更高级别的初始化脚本(rc1.d rc2.d …)运行之后再执行的。</p>
 </blockquote>
@@ -910,7 +919,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">23k</span>
   
 
   
@@ -919,7 +928,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">47 分钟</span>
+    <span title="站点阅读时长">48 分钟</span>
   
 </div>
 

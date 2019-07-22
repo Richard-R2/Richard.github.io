@@ -15,7 +15,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -268,7 +268,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">20</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">22</span></a>
 
   </li>
         
@@ -306,7 +306,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">20</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">21</span></a>
 
   </li>
         
@@ -584,7 +584,9 @@
 <p>关于闭包的知识可以参考<a href="/Python-Closure.html">&gt;&gt;传送门 - Python闭包&lt;&lt;</a>。</p>
 </blockquote>
 <h2 id="2-举例理解"><a href="#2-举例理解" class="headerlink" title="2.举例理解"></a>2.举例理解</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco</span><span class="params">(func)</span>:</span></span><br><span class="line">    print(<span class="string">"deco"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner_deco</span><span class="params">(*args)</span>:</span>  <span class="comment"># 调用的enclosing作用域中的对象，inner_deco函数就是个闭包</span></span><br><span class="line">        print(<span class="string">"inner_deco"</span>)</span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span> args:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> isinstance(a, int): <span class="comment"># 参数检查语句</span></span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> func(*args)  <span class="comment"># 调用了enclosing作用域的func，所以func会被加入到inner_deco的__closure__属性中</span></span><br><span class="line">    <span class="keyword">return</span> inner_deco</span><br><span class="line"></span><br><span class="line"><span class="meta">@deco  # 语法糖，就相当于func_sum = deco(func_sum)，此时func_sum就指向了inner_deco。可以理解为func_sum被deco装饰后变成了inner_deco</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func_sum</span><span class="params">(*args)</span>:</span></span><br><span class="line">    print(<span class="string">"func_sum"</span>)</span><br><span class="line">    <span class="keyword">return</span> sum(args)</span><br><span class="line"></span><br><span class="line"><span class="meta">@deco</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func_min</span><span class="params">(*args)</span>:</span></span><br><span class="line">    print(<span class="string">"func_min"</span>)</span><br><span class="line">    <span class="keyword">return</span> min(args)</span><br><span class="line"></span><br><span class="line"><span class="comment"># func_sum = deco(func_sum)</span></span><br><span class="line">print(func_sum(<span class="number">1</span>,<span class="number">2</span>,<span class="string">'3'</span>))</span><br><span class="line"></span><br><span class="line">print(func_min(<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>))</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">运行结果：</span><br><span class="line">deco</span><br><span class="line">deco</span><br><span class="line">inner_deco</span><br><span class="line">0</span><br><span class="line">inner_deco</span><br><span class="line">func_min</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>@deco只是一种语法糖写法<br>之所以打印结果中没有输出：”func_sum”，是因为在执行参数检查语句时return 0了。</p>
 </blockquote>
@@ -592,6 +594,7 @@
 <p>在main函数之前，import时就生效了。因为@deco就相当于func_sum = deco(func_sum)，是写在最外面的。<br>如果把上述例子中最后的两个print语句注释掉的话，执行结果将会是：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deco</span><br><span class="line">deco</span><br></pre></td></tr></table></figure>
+
 <h3 id="3-2-装饰器能不能返回别的函数？"><a href="#3-2-装饰器能不能返回别的函数？" class="headerlink" title="3.2 装饰器能不能返回别的函数？"></a>3.2 装饰器能不能返回别的函数？</h3><blockquote>
 <p>当然可以，这样就可以修改函数的功能了。<br>即被装饰的函数的功能取决于inner_deco返回的是哪个函数。</p>
 </blockquote>
@@ -893,7 +896,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">23k</span>
   
 
   
@@ -902,7 +905,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">47 分钟</span>
+    <span title="站点阅读时长">48 分钟</span>
   
 </div>
 
