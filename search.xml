@@ -42,7 +42,7 @@
   <entry>
     <title><![CDATA[Python - 数组切片、更新、排序]]></title>
     <url>%2FPython-List-Slice.html</url>
-    <content type="text"><![CDATA[1.数组切片12345678910111213141516171819202122232425l = [1, 2, 3, 4, 5, 6, 7, 8, 9]l[:] # 所有元素 # [1, 2, 3, 4, 5, 6, 7, 8, 9]l[0] # 第一个元素# 1l[1:3] # 第2~4个元素，不包括第4个# [2, 3]l[3:] # 第4~最后一个元素# [4, 5, 6, 7, 8, 9]l[:3] # 第1~4个元素，不包括第4个# [1, 2, 3]l[:-1] # 第1~最后一个元素，不包括最后一个# [1, 2, 3, 4, 5, 6, 7, 8]l[2:-1:2] # 从第3~最后一个元素中每隔2个步长取一个，不包括最后一个元素# [3, 5, 7]l[::3] # 每隔3个步长取一个元素# [1, 4, 7] 2.数组更新12345678910111213141516171819202122232425l = [1, 2, 3, 4, 5, 6, 7, 8, 9]l.append(0) # 列表最后追加一个元素0# [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]l.extend([0, 0]) # 列表后面追加另一个列表# [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0]l.insert(1, '0') # 在第1个元素的位置插入字符串'0'# [1, '0', 2, 3, 4, 5, 6, 7, 8, 9]l[1:3] = [0] # 用0替换第2~4个元素，不包括第4个# [1, 0, 4, 5, 6, 7, 8, 9]l[-2:] = [0, 0, 0, 0] # 将最后两个元素替换为四个0# [1, 2, 3, 4, 5, 6, 7, 0, 0, 0, 0]l.pop() # 弹出最后一个元素,返回该元素的值# [1, 2, 3, 4, 5, 6, 7, 8]l.pop(0) # 弹出第一个元素，返回该元素的值# [2, 3, 4, 5, 6, 7, 8, 9]del l[0] # 删除第一个元素# [2, 3, 4, 5, 6, 7, 8, 9] 3.数组排序123456789101112131415161718192021222324l = [1, 2, 3, 4, 5, 6, 7, 8, -9]l.reverse() # l反向# [-9, 8, 7, 6, 5, 4, 3, 2, 1]l.sort() # 对l进行排序, 默认从小到大，升序# [-9, 1, 2, 3, 4, 5, 6, 7, 8]l.sort(reverse=True) # 对l进行从大到小排序，降序，可与key参数搭配灵活使用# [8, 7, 6, 5, 4, 3, 2, 1, -9]l.sort(key=lambda x: abs(x)) # 按指定的方法进行排序，一般与lambda临时函数配合使用，也可以使用自定义方法如：def my_f(x): return abs(x) # 取绝对值l.sort(key=my_f) # 按自定义方法进行排序l = [(1,2), (-4,3), (6,0)]l.sort(key=lambda x: x[1]) # 按子元组的第二个元素大小升序排列# [(6,0), (1,2), (-4,3)]l.sort(key=lambda x: abs(x[0]), reverse=True) # 按第一个元素的绝对值大小降序排列# [(6,0), (-4,3), (1,2)] 4.其他数组操作123456789[1, 2] * 4 # [1,2]重复4次# [1, 2, 1, 2, 1, 2, 1, 2]l = [1, 2, 3, 4, 5, 6, 5, 8, 8]l.count(8) # 统计8出现的次数# 2l.index(5) # 找到5第一次出现的位置索引值(列表中没有5的话会报错ValueError)# 4]]></content>
+    <content type="text"><![CDATA[1.数组切片12345678910111213141516171819202122232425l = [1, 2, 3, 4, 5, 6, 7, 8, 9]l[:] # 所有元素 # [1, 2, 3, 4, 5, 6, 7, 8, 9]l[0] # 第一个元素# 1l[1:3] # 第2~4个元素，不包括第4个# [2, 3]l[3:] # 第4~最后一个元素# [4, 5, 6, 7, 8, 9]l[:3] # 第1~4个元素，不包括第4个# [1, 2, 3]l[:-1] # 第1~最后一个元素，不包括最后一个# [1, 2, 3, 4, 5, 6, 7, 8]l[2:-1:2] # 从第3~最后一个元素中每隔2个步长取一个，不包括最后一个元素# [3, 5, 7]l[::3] # 每隔3个步长取一个元素# [1, 4, 7] 2.数组更新12345678910111213141516171819202122232425l = [1, 2, 3, 4, 5, 6, 7, 8, 9]l.append(0) # 列表最后追加一个元素0# [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]l.extend([0, 0]) # 列表后面追加另一个列表# [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0]l.insert(1, '0') # 在第1个元素的位置插入字符串'0'# [1, '0', 2, 3, 4, 5, 6, 7, 8, 9]l[1:3] = [0] # 用0替换第2~4个元素，不包括第4个# [1, 0, 4, 5, 6, 7, 8, 9]l[-2:] = [0, 0, 0, 0] # 将最后两个元素替换为四个0# [1, 2, 3, 4, 5, 6, 7, 0, 0, 0, 0]l.pop() # 弹出最后一个元素,返回该元素的值# [1, 2, 3, 4, 5, 6, 7, 8]l.pop(0) # 弹出第一个元素，返回该元素的值# [2, 3, 4, 5, 6, 7, 8, 9]del l[0] # 删除第一个元素# [2, 3, 4, 5, 6, 7, 8, 9] 3.数组排序1234567891011121314151617181920212223242526272829l = [1, 2, 3, 4, 5, 6, 7, 8, -9]l.reverse() # l反向# [-9, 8, 7, 6, 5, 4, 3, 2, 1]list(reversed(l)) # l反向,与l.reverse()的区别：后者直接作用于l，返回None，前者返回一个迭代器l.sort() # 对l进行排序, 默认从小到大，升序# [-9, 1, 2, 3, 4, 5, 6, 7, 8]sorted(l) # 升序排序，与l.sort()的区别：后者直接作用于l，返回None，前者返回一个新的列表# [-9, 1, 2, 3, 4, 5, 6, 7, 8]l.sort(reverse=True) # 对l进行从大到小排序，降序，可与key参数搭配灵活使用# [8, 7, 6, 5, 4, 3, 2, 1, -9]l.sort(key=lambda x: abs(x)) # 按指定的方法进行排序，一般与lambda临时函数配合使用，也可以使用自定义方法如：def my_f(x): return abs(x) # 取绝对值l.sort(key=my_f) # 按自定义方法进行排序l = [(1,2), (-4,3), (6,0)]l.sort(key=lambda x: x[1]) # 按子元组的第二个元素大小升序排列# [(6,0), (1,2), (-4,3)]l.sort(key=lambda x: abs(x[0]), reverse=True) # 按第一个元素的绝对值大小降序排列# [(6,0), (-4,3), (1,2)] 4.其他数组操作12345678910[1, 2] * 4 # [1,2]重复4次# [1, 2, 1, 2, 1, 2, 1, 2]l = [1, 2, 3, 4, 5, 6, 5, 8, 8]l.count(8) # 统计8出现的次数# 2l.index(5) # 找到5第一次出现的位置索引值(列表中没有5的话会报错ValueError)# 4]]></content>
       <categories>
         <category>Python</category>
       </categories>
@@ -191,15 +191,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[GitHub教程 - Git安装配置]]></title>
-    <url>%2FGit-Configuration.html</url>
-    <content type="text"><![CDATA[*1.环境变量1vim ~/.bashrc 在后面添加以下内容,以解决某些包(如perl、git)安装时的warning 12export LC_ALL="C"export LANGUAGE="zh_CN:zh" 当然也可以直接在命令终端中export临时设置环境变量 2.安装123apt-get install git # 这是Ubuntu下的命令yum install git # 这是CentOS下的命令brew install git # 这是MAC下的命令 3.生成ssh密钥对1ssh-keygen -t rsa -b 4096 -C "your_email@example.com" 如果不想设置密码的话直接三次回车即可，和git生成密钥的命令相同。 生成的密钥对位置在 ~/.ssh，查看下公钥，后面要用到。 1cat ~/.ssh/id_rsa.pub 内容类似下面这样 1ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+am2s/r1n+xsipi/4H2ll8p3McdhQCLBwJGNbkaxpeWKtdbiUbqAWjHS436eNt/OF13VsyWLs5lb6J2I3J6GlCcEGMGOFc4gzLTP9e/TmXeyFlBMZkuSJTbsXvL9Q/tff/8Tgt4aVwR3OWlwfvPdtoyR0tGhDDQn8a0gzs04mPyMWjK6akt/zGCQ70Eo6stVMGCyMAL/PrHwdZ/puXjtw0T9HSs/ON/Jub+h3oKfgJVhpJNbIDR2r08LoEA0roTplI4aSR+JgnSKsXhIvTAUm+VRmWgz3oPYcNkaGkvBvA1gfk/baB6qxv0hkjPwtY5GIRkCU6cIcjG3U1LR6pnH+8Z0RbN9YaFFNRRf4rMnZ3n0jhYXCq7dzBoofLWRVlAqTlybF7xz9JNVQxiC+o5skBHJ/Eb7Ggtejc6TVW+FJaNUy5+yWqfhq57kC4zq+5HhAY9ToKZpYLKjJa7oG0eHAeOAgSd2jdDEvALegap4nrMHVLP8sOQlNFBMPjy1r0cW/Afp32gCtPOpQRuIkQdOnWUkzjObGTLaVffanhYnX470UNsvgQ+IyikhS5tiKPqkT317v6yFV4doeZgfNYtcgpLVZcVxkItTLS1h75d4h4MD2JVRk2nBGSLp5j2WIji4Tiy++LblV1Y5Y2wRcfefdXCIMT3jMNAcyhuCaNfaD/Q== your_email@example.com 4.公钥添加到GitHub&gt;&gt;传送门 - 添加你自己的公钥&lt;&lt; 将上一步的公钥拷贝下来，粘贴至GitHub网页以下位置 5.配置用户名和邮箱12git config --global user.name "your_name"git config --global user.email "your_email@example.com" 6.克隆代码1git clone git@github.com:user_name/project_name.git /path/to/your/sourcecode]]></content>
+    <title><![CDATA[服务器配置 - Nginx+Gunicorn+Supervisor+Flask]]></title>
+    <url>%2FServer-Configuration.html</url>
+    <content type="text"><![CDATA[1.为服务器添加ssh公钥验证2.Git安装配置3.Redis安装配置4.Nginx安装配置5.配置Python虚拟环境6.Gunicorn安装配置7.Supervisor安装配置]]></content>
       <categories>
-        <category>GitHub教程</category>
+        <category>服务器搭建</category>
       </categories>
       <tags>
-        <tag>Git</tag>
-        <tag>GitHub</tag>
+        <tag>Linux</tag>
+        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -212,18 +212,6 @@
       <tags>
         <tag>Linux</tag>
         <tag>ssh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[服务器配置 - Nginx+Gunicorn+Supervisor+Flask]]></title>
-    <url>%2FServer-Configuration.html</url>
-    <content type="text"><![CDATA[1.为服务器添加ssh公钥验证2.Git安装配置3.Redis安装配置4.Nginx安装配置5.配置Python虚拟环境6.Gunicorn安装配置7.Supervisor安装配置]]></content>
-      <categories>
-        <category>服务器搭建</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -242,6 +230,18 @@
     <title><![CDATA[GitHub教程 - Pull Request 工作流程]]></title>
     <url>%2FGitHub-Pull-Request-Workflow.html</url>
     <content type="text"><![CDATA[1.Fork仓库 先在github上将源仓库fork到自己的仓库 12源仓库：git@github.com:southflower/slark.gitfork后：git@github.com:RichardRenn/slark.git 2.检出代码 在本地检出fork后的仓库代码 12cd ~/workspace/sourcecode/richardrenngit clone git@github.com:RichardRenn/slark.git ./slark 3.关联上游源仓库 进入代码目录，加入上游源仓库关联 12cd ./slarkgit remote add upstream git@github.com:southflower/slark.git 4.更新代码 更新源仓库代码到本地仓库 12git fetch upstreamgit merge upstream/master 5.提交代码 在本地仓库中，修改代码后提交到自己的远端仓库 123git add .git commit -m "anything"git push origin master 6.提交PR 在github网页上提交PR在自己的仓库界面点击”New Pull Request” 7.PR合入 然后待源仓库的作者将你的PR合入即可 带分支的工作方式可以参考&gt;&gt;传送门 - 分支工作流程&lt;&lt;]]></content>
+      <categories>
+        <category>GitHub教程</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[GitHub教程 - Git安装配置]]></title>
+    <url>%2FGit-Configuration.html</url>
+    <content type="text"><![CDATA[*1.环境变量1vim ~/.bashrc 在后面添加以下内容,以解决某些包(如perl、git)安装时的warning 12export LC_ALL="C"export LANGUAGE="zh_CN:zh" 当然也可以直接在命令终端中export临时设置环境变量 2.安装123apt-get install git # 这是Ubuntu下的命令yum install git # 这是CentOS下的命令brew install git # 这是MAC下的命令 3.生成ssh密钥对1ssh-keygen -t rsa -b 4096 -C "your_email@example.com" 如果不想设置密码的话直接三次回车即可，和git生成密钥的命令相同。 生成的密钥对位置在 ~/.ssh，查看下公钥，后面要用到。 1cat ~/.ssh/id_rsa.pub 内容类似下面这样 1ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+am2s/r1n+xsipi/4H2ll8p3McdhQCLBwJGNbkaxpeWKtdbiUbqAWjHS436eNt/OF13VsyWLs5lb6J2I3J6GlCcEGMGOFc4gzLTP9e/TmXeyFlBMZkuSJTbsXvL9Q/tff/8Tgt4aVwR3OWlwfvPdtoyR0tGhDDQn8a0gzs04mPyMWjK6akt/zGCQ70Eo6stVMGCyMAL/PrHwdZ/puXjtw0T9HSs/ON/Jub+h3oKfgJVhpJNbIDR2r08LoEA0roTplI4aSR+JgnSKsXhIvTAUm+VRmWgz3oPYcNkaGkvBvA1gfk/baB6qxv0hkjPwtY5GIRkCU6cIcjG3U1LR6pnH+8Z0RbN9YaFFNRRf4rMnZ3n0jhYXCq7dzBoofLWRVlAqTlybF7xz9JNVQxiC+o5skBHJ/Eb7Ggtejc6TVW+FJaNUy5+yWqfhq57kC4zq+5HhAY9ToKZpYLKjJa7oG0eHAeOAgSd2jdDEvALegap4nrMHVLP8sOQlNFBMPjy1r0cW/Afp32gCtPOpQRuIkQdOnWUkzjObGTLaVffanhYnX470UNsvgQ+IyikhS5tiKPqkT317v6yFV4doeZgfNYtcgpLVZcVxkItTLS1h75d4h4MD2JVRk2nBGSLp5j2WIji4Tiy++LblV1Y5Y2wRcfefdXCIMT3jMNAcyhuCaNfaD/Q== your_email@example.com 4.公钥添加到GitHub&gt;&gt;传送门 - 添加你自己的公钥&lt;&lt; 将上一步的公钥拷贝下来，粘贴至GitHub网页以下位置 5.配置用户名和邮箱12git config --global user.name "your_name"git config --global user.email "your_email@example.com" 6.克隆代码1git clone git@github.com:user_name/project_name.git /path/to/your/sourcecode]]></content>
       <categories>
         <category>GitHub教程</category>
       </categories>

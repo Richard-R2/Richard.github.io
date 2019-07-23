@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://richardrenn.github.io/hello-world.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/Git-Configuration.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/GitHub-Branch-Workflow.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/GitHub-Pull-Request-Workflow.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/Server-Configuration.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/Server-SSH-Key.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/Server-Redis-Configuration.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/Server-Nginx-Configuration.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/Python-Virtualenv.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/Server-Gunicorn-Configuration.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/Server-Supervisor-Configuration.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/Server-Redis-Multi-Instance.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/Python-Function-Scope.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/Python-Closure.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/Python-Decorator.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/Python-Copy-Deepcopy.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/Python-List-Slice.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://richardrenn.github.io/Python-Super.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
     <loc>https://richardrenn.github.io/Python-OpenCV-Snapshot.html</loc>
     <lastmod>2019-07-22</lastmod>
   </url>  <url>
     <loc>https://richardrenn.github.io/GitHub-Large-File-Storage.html</loc>
     <lastmod>2019-05-11</lastmod>
   </url>  <url>
-    <loc>https://richardrenn.github.io/Server-SSH-Key.html</loc>
-    <lastmod>2019-05-11</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/Server-Supervisor-Configuration.html</loc>
-    <lastmod>2019-05-11</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/Server-Redis-Multi-Instance.html</loc>
-    <lastmod>2019-05-11</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/Server-Redis-Configuration.html</loc>
-    <lastmod>2019-05-11</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/Server-Gunicorn-Configuration.html</loc>
-    <lastmod>2019-05-11</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/Python-Decorator.html</loc>
-    <lastmod>2019-05-11</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/Python-Closure.html</loc>
-    <lastmod>2019-05-11</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/GitHub-Pull-Request-Workflow.html</loc>
-    <lastmod>2019-05-11</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/Git-Configuration.html</loc>
-    <lastmod>2019-05-11</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/GitHub-Branch-Workflow.html</loc>
-    <lastmod>2019-05-11</lastmod>
-  </url>  <url>
     <loc>https://richardrenn.github.io/Linux-Msconfig.html</loc>
     <lastmod>2019-05-06</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/Python-Copy-Deepcopy.html</loc>
-    <lastmod>2019-05-06</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/Python-Function-Scope.html</loc>
-    <lastmod>2019-05-06</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/Python-List-Slice.html</loc>
-    <lastmod>2019-05-06</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/Python-Super.html</loc>
-    <lastmod>2019-05-06</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/Python-Virtualenv.html</loc>
-    <lastmod>2019-05-06</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/Server-Configuration.html</loc>
-    <lastmod>2019-05-06</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/Server-Nginx-Configuration.html</loc>
-    <lastmod>2018-12-22</lastmod>
-  </url>  <url>
-    <loc>https://richardrenn.github.io/hello-world.html</loc>
-    <lastmod>2018-12-20</lastmod>
   </url>
 </urlset>
