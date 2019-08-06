@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://richardrenn.github.io/hello-world.html</loc>
+    
+    <lastmod>2019-08-06T16:38:18.261Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://richardrenn.github.io/Git-Configuration.html</loc>
     
     <lastmod>2019-07-23T16:51:17.446Z</lastmod>

@@ -250,4 +250,9 @@
         <tag>GitHub</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2Fhello-world.html</url>
+    <content type="text"><![CDATA[博客访问地址 - Coding博客访问地址 - Github博客访问地址 - Gitee]]></content>
+  </entry>
 </search>
