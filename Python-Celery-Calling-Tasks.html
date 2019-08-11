@@ -111,18 +111,18 @@
 
 
 
-  <meta name="description" content="任令仓技术博客">
-<meta name="keywords" content="灰帽子,任令仓,个人博客,技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://richardrenn.github.io/tags/index.html">
+  <meta name="description" content="Celery任务可以根据不同场景很灵活的调用：延迟执行、定时执行、分组并发执行、链式顺序执行、任务分块、任务分割等等。">
+<meta name="keywords" content="Python,Celery,调用任务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python - Celery - 调用任务">
+<meta property="og:url" content="https://richardrenn.github.io/Python-Celery-Calling-Tasks.html">
 <meta property="og:site_name" content="灰帽子">
-<meta property="og:description" content="任令仓技术博客">
+<meta property="og:description" content="Celery任务可以根据不同场景很灵活的调用：延迟执行、定时执行、分组并发执行、链式顺序执行、任务分块、任务分割等等。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-18T14:04:26.902Z">
+<meta property="og:updated_time" content="2019-08-11T10:11:44.683Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="任令仓技术博客">
+<meta name="twitter:title" content="Python - Celery - 调用任务">
+<meta name="twitter:description" content="Celery任务可以根据不同场景很灵活的调用：延迟执行、定时执行、分组并发执行、链式顺序执行、任务分块、任务分割等等。">
 
 
 
@@ -131,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="https://richardrenn.github.io/tags/">
+  <link rel="canonical" href="https://richardrenn.github.io/Python-Celery-Calling-Tasks.html">
 
 
 
@@ -141,7 +141,7 @@
   };
 </script>
 
-  <title>tags | 灰帽子</title>
+  <title>Python - Celery - 调用任务 | 灰帽子 - 任令仓技术博客</title>
   
 
 
@@ -256,7 +256,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -395,183 +395,372 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://richardrenn.github.io/Python-Celery-Calling-Tasks.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="任令仓">
+      <meta itemprop="description" content="任令仓技术博客">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="灰帽子">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h2 class="post-title" itemprop="name headline">tags
-
-</h2>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
+          <h2 class="post-title" itemprop="name headline">Python - Celery - 调用任务
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-28 16:35:54" itemprop="dateCreated datePublished" datetime="2019-07-28T16:35:54+08:00">2019-07-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-11 18:11:44" itemprop="dateModified" datetime="2019-08-11T18:11:44+08:00">2019-08-11</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
                 
                 
-                  
-                    
-                  
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Python-Celery-Calling-Tasks.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/Python-Celery-Calling-Tasks.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/Python-Celery-Calling-Tasks.html" class="leancloud_visitors" data-flag-title="Python - Celery - 调用任务">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
                 
-                  
-                    
-                  
+                  <span class="post-meta-item-text">本文字数：</span>
                 
-                  
-                    
-                  
+                <span title="本文字数">2.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
                 
-                  
-                    
-                  
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                目前共计 24 个标签
+                <span title="阅读时长">4 分钟</span>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/C3算法/" style="font-size: 12px; color: #ccc">C3算法</a> <a href="/tags/Celery/" style="font-size: 12px; color: #ccc">Celery</a> <a href="/tags/Git/" style="font-size: 19.2px; color: #818181">Git</a> <a href="/tags/GitHub/" style="font-size: 19.2px; color: #818181">GitHub</a> <a href="/tags/Gunicorn/" style="font-size: 12px; color: #ccc">Gunicorn</a> <a href="/tags/Linux/" style="font-size: 26.4px; color: #363636">Linux</a> <a href="/tags/MRO/" style="font-size: 12px; color: #ccc">MRO</a> <a href="/tags/Nginx/" style="font-size: 12px; color: #ccc">Nginx</a> <a href="/tags/OpenCV/" style="font-size: 12px; color: #ccc">OpenCV</a> <a href="/tags/Python/" style="font-size: 30px; color: #111">Python</a> <a href="/tags/Redis/" style="font-size: 15.6px; color: #a7a7a7">Redis</a> <a href="/tags/Super-继承顺序/" style="font-size: 12px; color: #ccc">Super()继承顺序</a> <a href="/tags/Supervisor/" style="font-size: 12px; color: #ccc">Supervisor</a> <a href="/tags/ssh/" style="font-size: 12px; color: #ccc">ssh</a> <a href="/tags/virtualenv/" style="font-size: 12px; color: #ccc">virtualenv</a> <a href="/tags/函数作用域/" style="font-size: 12px; color: #ccc">函数作用域</a> <a href="/tags/数组/" style="font-size: 12px; color: #ccc">数组</a> <a href="/tags/数组切片/" style="font-size: 12px; color: #ccc">数组切片</a> <a href="/tags/服务器/" style="font-size: 22.8px; color: #5c5c5c">服务器</a> <a href="/tags/浅拷贝和深拷贝/" style="font-size: 12px; color: #ccc">浅拷贝和深拷贝</a> <a href="/tags/装饰器/" style="font-size: 12px; color: #ccc">装饰器</a> <a href="/tags/视频截图/" style="font-size: 12px; color: #ccc">视频截图</a> <a href="/tags/调用任务/" style="font-size: 12px; color: #ccc">调用任务</a> <a href="/tags/闭包/" style="font-size: 12px; color: #ccc">闭包</a>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+              <div class="post-description">Celery任务可以根据不同场景很灵活的调用：延迟执行、定时执行、分组并发执行、链式顺序执行、任务分块、任务分割等等。</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><blockquote>
+<p>有3个任务：add作加法运算, mul作乘法运算, xsum为求和运算</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.task(bind=True, base=BaseTask)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self, a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task(bind=True, base=BaseTask)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mul</span><span class="params">(self, a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a * b</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task(bind=True, base=BaseTask)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xsum</span><span class="params">(self, *args)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sum(args)</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-立即执行任务"><a href="#1-立即执行任务" class="headerlink" title="1.立即执行任务"></a>1.立即执行任务</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add.apply_async()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>或者简写为：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add.delay()</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-延时任务"><a href="#2-延时任务" class="headerlink" title="2.延时任务"></a>2.延时任务</h2><blockquote>
+<p>使用<code>countdown</code>参数使任务在60秒后执行：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add.apply_async(countdown=<span class="number">60</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-定时任务"><a href="#3-定时任务" class="headerlink" title="3.定时任务"></a>3.定时任务</h2><blockquote>
+<p>使用<code>eta</code>参数使任务在晚上9点整执行：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">exec_at = datetime.datetime(<span class="number">2019</span>, <span class="number">7</span>, <span class="number">28</span>, <span class="number">21</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">add.apply_async(eta=exec_at)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-任务分组"><a href="#4-任务分组" class="headerlink" title="4.任务分组"></a>4.任务分组</h2><blockquote>
+<p>使用<code>group</code>生成一组任务并发执行</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tasks = group(add.si(x,x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>))</span><br><span class="line">tasks.apply_async()</span><br><span class="line"></span><br><span class="line"><span class="comment"># get方法可获取任务的返回值:</span></span><br><span class="line">res = tasks()</span><br><span class="line">res.get(timeout=<span class="number">1</span>)  <span class="comment"># [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-任务分块"><a href="#5-任务分块" class="headerlink" title="5.任务分块"></a>5.任务分块</h2><blockquote>
+<p>使用<code>chord</code>将1000个任务分成100个一块，共10组</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tasks = add.chunks(((x, x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1000</span>)), <span class="number">100</span>).group()  <span class="comment"># 转化为group</span></span><br><span class="line"><span class="comment"># 每间隔60秒执行一组</span></span><br><span class="line">tasks.skew(step=<span class="number">60</span>)</span><br><span class="line">tasks.apply_async()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意使用了skew后eta参数会失效，想要定时效果可以转化为countdown如：</span></span><br><span class="line">task.apply_async(countdown=(exec_at - now()).seconds)</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-链式顺序执行"><a href="#6-链式顺序执行" class="headerlink" title="6.链式顺序执行"></a>6.链式顺序执行</h2><blockquote>
+<p>任务签名<code>signature</code>：<br>subtask=signature，可以简写为<code>s</code>，如add.s()，当需要对任务做一定处理后执行时使用。<br><code>s</code>和<code>si</code>的区别：<br><code>s</code>相当于signature()，而<code>si</code>相当于signature(immutable=True)。 <code>s</code>会把上个任务的结果传给下个任务，而<code>si</code>不传递结果。</p>
+</blockquote>
+<blockquote>
+<p>使用<code>chain</code>按顺序执行一队任务：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前一个任务的结果作为后一个任务的第一个参数</span></span><br><span class="line">chain(add.s(<span class="number">1</span>,<span class="number">1</span>), add.s(<span class="number">2</span>), add.s(<span class="number">3</span>))()  </span><br><span class="line"></span><br><span class="line"> <span class="comment"># 不传递结果，仅仅按顺序执行</span></span><br><span class="line">chain(add.si(<span class="number">1</span>,<span class="number">1</span>), add.si(<span class="number">2</span>,<span class="number">2</span>), add.si(<span class="number">3</span>,<span class="number">3</span>))()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以使用 | 链接任务，效果是一样的，如:</span></span><br><span class="line">all_task = (add.s(<span class="number">1</span>,<span class="number">1</span>) | add.s(<span class="number">2</span>) | add.s(<span class="number">3</span>))</span><br><span class="line">all_task = (add.si(<span class="number">1</span>,<span class="number">1</span>) | add.si(<span class="number">2</span>，<span class="number">2</span>) | add.si(<span class="number">3</span>，<span class="number">2</span>))</span><br><span class="line">all_task.delay()</span><br><span class="line"></span><br><span class="line"><span class="comment"># chain还支持部分传参，如：</span></span><br><span class="line">c = (add.s(<span class="number">2</span>) | mul.s(<span class="number">8</span>))</span><br><span class="line">res = c(<span class="number">1</span>)  <span class="comment"># (1+2)*8</span></span><br><span class="line">res.get()  <span class="comment"># 24</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 搭配列表生成式实现更灵活,如</span></span><br><span class="line">task_list = [add.si(x,x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">3</span>)]</span><br><span class="line">chain(*task_list)()  <span class="comment"># 不要忘了加上最后的括号才可执行任务</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>另一种调用方法:</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c =   (add.s(<span class="number">4</span>, <span class="number">16</span>) | mul.s(<span class="number">2</span>) | (add.s(<span class="number">4</span>) | mul.s(<span class="number">8</span>))) <span class="comment"># ((4 + 16) * 2 + 4) * 8</span></span><br><span class="line">res = c.apply_async()  <span class="comment"># 或者直接c()</span></span><br><span class="line">res.get()  <span class="comment"># .get()方法可以获取链式任务的最终返回值352</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="7-任务分割"><a href="#7-任务分割" class="headerlink" title="7.任务分割"></a>7.任务分割</h2><blockquote>
+<p>使用<code>chord</code>将任务分为<code>header</code>和<code>body</code>两部分，<code>header</code>任务执行完再执行<code>body</code>,其中<code>header</code>的返回结果会作为参数传递给<code>body</code>，如：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res = chord(header=[add.s(<span class="number">1</span>,<span class="number">2</span>),mul.s(<span class="number">3</span>,<span class="number">4</span>)],body=add.s())()  <span class="comment"># 任务(1+2)+(3*4)</span></span><br><span class="line">res.get()  <span class="comment">#</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>当一个<code>group</code>和另一个<code>task</code>组成<code>chain</code>时，会自动升级转化为<code>chord</code>，如：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c = (group(add.s(i, i) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)) | xsum.s())  <span class="comment"># (0+0)+(1+1)+(2+2)+...+(9+9)</span></span><br><span class="line">res = c()</span><br><span class="line">res.get()  <span class="comment"># 90</span></span><br></pre></td></tr></table></figure>
+
+
       
     </div>
+
     
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>支持</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="任令仓 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpeg" alt="任令仓 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
 
 
 
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>任令仓</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
     
+    <a href="https://richardrenn.github.io/Python-Celery-Calling-Tasks.html" title="Python - Celery - 调用任务">https://richardrenn.github.io/Python-Celery-Calling-Tasks.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
-    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/Celery/" rel="tag"># Celery</a>
+          
+            <a href="/tags/调用任务/" rel="tag"># 调用任务</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Python-OpenCV-Snapshot.html" rel="next" title="Python - OpenCV - 截取视频某个时间点的一帧">
+                <i class="fa fa-chevron-left"></i> Python - OpenCV - 截取视频某个时间点的一帧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -594,8 +783,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -688,6 +886,22 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前提"><span class="nav-text">前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-立即执行任务"><span class="nav-text">1.立即执行任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-延时任务"><span class="nav-text">2.延时任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-定时任务"><span class="nav-text">3.定时任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-任务分组"><span class="nav-text">4.任务分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-任务分块"><span class="nav-text">5.任务分块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-链式顺序执行"><span class="nav-text">6.链式顺序执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-任务分割"><span class="nav-text">7.任务分割</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
