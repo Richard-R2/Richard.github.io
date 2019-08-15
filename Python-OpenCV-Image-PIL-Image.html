@@ -119,13 +119,12 @@
 <meta property="og:site_name" content="灰帽子">
 <meta property="og:description" content="图片处理过程中涉及OpenCV图片和PIL.Image对象的互相转化。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://richardrenn.github.io/images/Python-OpenCV-Image-PIL-Image/source_image.png">
 <meta property="og:image" content="https://richardrenn.github.io/images/Python-OpenCV-Image-PIL-Image/target_image.jpg">
-<meta property="og:updated_time" content="2019-08-15T14:40:38.548Z">
+<meta property="og:updated_time" content="2019-08-15T14:45:05.921Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python - 图片处理 - OpenCV图片与PIL.Image对象互相转化">
 <meta name="twitter:description" content="图片处理过程中涉及OpenCV图片和PIL.Image对象的互相转化。">
-<meta name="twitter:image" content="https://richardrenn.github.io/images/Python-OpenCV-Image-PIL-Image/source_image.png">
+<meta name="twitter:image" content="https://richardrenn.github.io/images/Python-OpenCV-Image-PIL-Image/target_image.jpg">
 
 
 
@@ -461,7 +460,7 @@
                 
               
 
-              <time title="创建时间：2019-08-15 21:27:43 / 修改时间：22:40:38" itemprop="dateCreated datePublished" datetime="2019-08-15T21:27:43+08:00">2019-08-15</time>
+              <time title="创建时间：2019-08-15 21:27:43 / 修改时间：22:45:05" itemprop="dateCreated datePublished" datetime="2019-08-15T21:27:43+08:00">2019-08-15</time>
             
 
             
@@ -569,16 +568,28 @@
 
       
         <h2 id="1-起因"><a href="#1-起因" class="headerlink" title="1.起因"></a>1.起因</h2><blockquote>
-<p>因项目需要对视频封面图片作以下处理：宽高比不为一的图片处理成两端模糊填充的正方形，使得呈现如下效果:<br><img src="/images/Python-OpenCV-Image-PIL-Image/source_image.png" alt="source_image.png"> <img src="/images/Python-OpenCV-Image-PIL-Image/target_image.jpg" alt="target_image.jpg"></p>
+<p>因项目需要对视频封面图片作以下处理：宽高比不为一的图片处理成两端模糊填充的正方形，使得呈现如下效果:</p>
 </blockquote>
-<h2 id="2-思路"><a href="#2-思路" class="headerlink" title="2.思路"></a>2.思路</h2><blockquote>
-<ol>
+<!-- ![source_image.png](/images/Python-OpenCV-Image-PIL-Image/source_image.png) -->
+<p><img src="/images/Python-OpenCV-Image-PIL-Image/target_image.jpg" alt="target_image.jpg"></p>
+<h2 id="2-思路"><a href="#2-思路" class="headerlink" title="2.思路"></a>2.思路</h2><ul>
+<li><ol>
 <li>使用PIL库对图片作裁减和放大处理;</li>
+</ol>
+</li>
+<li><ol start="2">
 <li>上一步得到的图片转化到OpenCV图像处理模块对上一步得到的图片做高斯模糊处理(因为PIL的图片模糊滤镜强度不够);</li>
+</ol>
+</li>
+<li><ol start="3">
 <li>上一步处理好的图片转化为PIL.Image,将原图居中合成进来;</li>
+</ol>
+</li>
+<li><ol start="4">
 <li>处理好的图片保存到本地或者转化为内存中的文件对象作其它操作: 上传下载等.</li>
 </ol>
-</blockquote>
+</li>
+</ul>
 <h2 id="3-代码实现"><a href="#3-代码实现" class="headerlink" title="3.代码实现"></a>3.代码实现</h2><blockquote>
 <p>涉及到的代码库 Pillow==4.3.0, opencv-python==4.1.0.25, numpy==1.16.0</p>
 </blockquote>
