@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://richardrenn.github.io/Python-OpenCV-Snapshot.html</loc>
+    
+    <lastmod>2019-08-15T14:33:23.975Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://richardrenn.github.io/Python-OpenCV-Image-PIL-Image.html</loc>
+    
+    <lastmod>2019-08-15T14:33:23.974Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://richardrenn.github.io/Python-Celery-Calling-Tasks.html</loc>
     
     <lastmod>2019-08-11T10:11:44.683Z</lastmod>
@@ -138,13 +152,6 @@
     <loc>https://richardrenn.github.io/Python-Super.html</loc>
     
     <lastmod>2019-07-23T16:36:26.090Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://richardrenn.github.io/Python-OpenCV-Snapshot.html</loc>
-    
-    <lastmod>2019-07-22T17:14:22.588Z</lastmod>
     
   </url>
   
