@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://richardrenn.github.io/about/index.html</loc>
+    
+    <lastmod>2019-08-19T14:54:15.880Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://richardrenn.github.io/Python-OpenCV-Image-PIL-Image.html</loc>
     
     <lastmod>2019-08-15T14:49:58.950Z</lastmod>
@@ -159,13 +166,6 @@
     <loc>https://richardrenn.github.io/Linux-Msconfig.html</loc>
     
     <lastmod>2019-05-06T16:08:26.200Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://richardrenn.github.io/about/index.html</loc>
-    
-    <lastmod>2019-03-11T12:19:19.219Z</lastmod>
     
   </url>
   
